@@ -10,6 +10,8 @@ class DataProject(models.Model):
     desc = models.TextField(blank=True)
     license = models.TextField(blank=True)
 
+    background_image = models.ImageField(upload_to='/upload/data/', blank=True)
+
     created = models.DateTimeField(auto_now_add=True) # update automatically on creation
     updated = models.DateTimeField(auto_now=True) # update automatically on save
 
