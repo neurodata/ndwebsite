@@ -4,9 +4,11 @@ from django.db import models
 
 # Create your models here.
 class DataProject(models.Model):
+    token = models.CharField(max_length=255)
+
     title = models.CharField(max_length=255, blank=True)
     desc = models.TextField(blank=True)
-    info = models.TextField(blank=True)
+    license = models.TextField(blank=True)
 
 class ExploreTile(models.Model):
     title = models.CharField(max_length=255, blank=True)
