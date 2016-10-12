@@ -1,0 +1,151 @@
+{% load staticfiles %}
+
+{% include 'inc/header.html' %}
+
+<!--
+	.wrap sets a width of 1280px and a max-width of 94%
+	.group clears all floats
+-->
+
+	<script>
+		var featuredDataObj = {
+			"data":
+			[
+				{"id":"01","title":"KKI", "image":"data-01-01.jpg"},
+				{"id":"02","title":"Ohyama et al. nature (2015)", "image":"data-02-01.jpg"},
+				{"id":"03","title":"Acardona_abd1_5", "image":"data-03-01.jpg"},
+				{"id":"04","title":"ara_test", "image":"data-04-01.jpg"},
+				{"id":"05","title":"Bock et al. Nature (2011)", "image":"data-05-01.jpg"},
+				{"id":"06","title":"Weiler et al. Scientific Data (2014)", "image":"data-06-01.jpg"},
+				{"id":"07","title":"Vladimirov et al. Nature Methods (2014)", "image":"data-07-01.jpg"}
+			],
+		};
+		{% include 'inc/teamObj.js' %}
+	</script>
+
+	<div id="home" class="page">
+
+		{% include 'inc/nav.php' %}
+
+		<div id="banner" role="banner" class="dark">
+			<video autoplay muted preload loop width="640" height="360" id="video">
+				<source src="{% static 'assets/video/NeurodataIntroVideo.mp4' %}"type="video/mp4" />
+				<source src="{% static 'assets/video/NeurodataIntroVideo.webm' %}"type="video/webm" />
+				<source src="{% static 'assets/video/NeurodataIntroVideo.ogv' %}"type="video/ogg" />
+			</video>
+			<img id="fader" src="{% static 'assets/img/vid-spacer-fade.png' %}" />
+			<div class="wrap group valign">
+				<h1>We believe in the upward spiral of science</h1>
+			</div>
+			<img id="spacer" src="{% static 'assets/img/vid-spacer.png' %}" />
+		</div><!-- /#banner -->
+
+		<div class="wedge-wrap"></div>
+
+		<div id="main" role="main" class="overlay">
+
+			<div id="intro" class="wrap group dark">
+				<div class="center text">
+					<h2>Why Neurodata?</h2>
+					<p>Our goal is to work together with neuroexperimentalists to discover fundamental principles governing the relationship between mind and brain, via building and deploying open source data-driven tools that run at scale on open access data. This includes analytics, databases, cloud computing, and Web-services applied to both big neuroimages and big neurographs.</p>
+					<a href="/about" class="button">Read More</a>
+				</div><!-- /.wrap.group -->
+			</div><!-- /#intro -->
+
+			<div id="midriff">
+				<div class="wrap group dark">
+					<div class="grid-3">
+						<div class="valign">
+							<h3>An expert in his field</h3>
+							<p>Watch Joshua Vogelstein speak on the art of data collection known as Statistical inference and how neurodata aids in the upward spiral of science by allowing the sharing, exploration and analysis of statistical information.</p>
+						</div>
+					</div>
+					<div class="grid-3 fitvids">
+						<iframe width="560" height="315" src="https://player.vimeo.com/video/84521039?title=0&byline=0&badge=0&portrait=0&color=318dde" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+						<!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/ScMzIvxBSi4?controls=0&showinfo=0&color=white&modestbranding=1&rel=0" frameborder="0" allowfullscreen></iframe> -->
+					</div>
+				</div><!-- /.wrap.group -->
+			</div><!-- /#midriff -->
+
+			<div id="data" class="feature dark">
+				<div class="mask"></div>
+				<h2 class="wrap">Featured Data</h2>
+
+				<div class="hovercheck wrap">
+					<div class="group">
+					<script>
+						$.each(featuredDataObj.data, function(i, data) {
+							document.write('<div class="grid-25">');
+							document.write('<a href="/detail.php?id='+data['id']+'"></a>');
+							document.write('<div><img src="/data/'+data['image']+'" alt="" />');
+							document.write('<span><h5>'+data['title']+'</h5></span></div>');
+							document.write('</div>');
+						});
+					</script>
+						<div class="grid-25 view-all">
+							<a href="/data.php"></a>
+							<div>
+								<img src="http://placehold.it/640x427" alt="" />
+								<span>
+									<h5>View all Data &gt;</h5>
+								</span>
+							</div>
+						</div>
+					</div><!-- /.group -->
+				</div><!-- /.wrap -->
+			</div><!-- /#data -->
+
+			<div id="tools" class="feature dark">
+				<h2 class="wrap">Featured Tools</h2>
+				<div class="wrap group">
+					<div class="grid-3">
+						<img src="http://placehold.it/640x427" alt="" />
+					</div>
+					<div class="grid-3">
+						<div class="valign">
+							<h4><a href="#" target="_blank">Really Long Tool Name That Goes on for a Long Time and Has to Go on to a Second Line</a></h4>
+							<h4><a href="#" target="_blank">Tool Name #3</a></h4>
+							<h4><a href="#" target="_blank">Really Long Tool Name That Goes on for a Long Time and Has to Go on to a Second Line</a></h4>
+							<a href="/tools.php" class="button">View all tools</a>
+						</div>
+					</div>
+				</div><!-- /.wrap.group -->
+			</div><!-- /#tools -->
+
+			<script>
+				//this line of code removes the team members without pictures
+				teamObj.data = $.grep(teamObj.data, function(o,i) { return o.image == 'placeholder.png'; }, true);
+
+				//these two lines pick a random team member from the array of objects
+				var obj_keys = Object.keys(teamObj.data);
+				var ran_key = obj_keys[Math.floor(Math.random() *obj_keys.length)];
+			</script>
+
+			<div id="bottom" class="group dark">
+				<div class="grid-3 no-margin">
+					<script>
+						document.write('<span><img class="grey" src="/assets/img/team/'+teamObj.data[ran_key]['image']+'" alt="'+teamObj.data[ran_key]['name']+'" /></span>');
+					</script>
+					<div class="copy">
+						<h3>Meet Our Team</h3>
+					<script>
+						document.write('<p><strong>'+teamObj.data[ran_key]['name']+'</strong><p>');
+						document.write('<p class="mbot"><em>'+teamObj.data[ran_key]['position']+'</em><p>');
+					</script>
+						<script>document.write('<p>'+teamObj.data[ran_key]['bio']+'<p>');</script>
+						<a href="/team.php" class="button">Learn more</a>
+						<a href="/team.php" class="button hollow">View all</a>
+					</div>
+				</div>
+				<div class="grid-3 no-margin">
+					<h3>Community Involvement</h3>
+					<p>Voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis quae ab illo inventore veritatis</p>
+					<a href="#" class="button">Contribute Findings</a>
+				</div>
+			</div><!-- /#bottom.group -->
+
+		</div><!-- /#main -->
+
+	</div><!-- /#home.page -->
+
+{% include 'inc/footer.html' %}
