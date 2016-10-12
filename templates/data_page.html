@@ -1,0 +1,360 @@
+{% load staticfiles %}
+
+{% include 'inc/header.html' %}
+
+	<div id="detail" class="page inner">
+
+		{% include 'inc/nav.html' %}
+
+		<div id="banner" role="banner" class="dark">
+			<img id="video" src="{{ background_image.url }}" />
+			<img id="fader" src="{% static 'assets/img/vid-spacer-fade.png' %}" />
+			<div class="wrap group valign">
+				<h1>{{ title }}</h1>
+			</div>
+			<img id="spacer" src="{% static 'assets/img/vid-spacer.png' %}" />
+		</div><!-- /#banner -->
+
+		<div class="wedge-wrap"></div>
+
+		<div id="main" role="main" class="overlay">
+
+			<div id="intro" class="wrap group dark">
+				<h2>About This Project</h2>
+				<div>
+					<ul id="anchors" class="dotless">
+						<li><a href="#">Explore</a></li>
+						<li><a href="#">Analyses</a></li>
+						<li><a href="#">Tools</a></li>
+						<li><a href="#">Upload</a></li>
+					</ul>
+						{{ desc }}
+				</div>
+			</div><!-- /#intro -->
+
+			<div class="wrap group">
+				<em style="position: absolute; top: 30px;">Not sure what this filter is supposed to do</em>
+				<div id="filter" class="filtering">
+					<span>Explore:</span>
+					<div>
+						<a href="#" class="selected menu">Images<i class="fa fa-bars"></i></a>
+						<a href="#" class="moby">Images</a>
+						<a href="#">Time</a>
+						<a href="#">Matrices</a>
+						<a href="#">Shapes</a>
+						<a href="#">Graphs</a>
+					</div>
+				</div>
+			</div><!-- /.wrap.group -->
+
+			<div id="data" class="feature">
+
+				<div class="hovercheck wrap">
+					<div class="group">
+						<div class="grid-25 time">
+							<a href="#">
+								<img src="http://placehold.it/640x427" alt="" />
+								<span>
+									<h5>Bock et al. Nature (2011)</h5>
+									<span class="on-hover">
+										<p>J. Vogelstein, PHD</p>
+										<ul>
+											<li><strong>Modality:</strong> EM</li>
+											<li><strong>Species:</strong> M. musculus</li>
+											<li><strong>Cuboids:</strong> 77242464</li>
+											<li><strong>Cuboid Size:</strong> 262144</li>
+											<li><strong>Voxels:</strong> 20248.65</li>
+										</ul>
+									</span>
+								</span>
+							</a>
+						</div>
+						<div class="grid-25 matrices">
+							<a href="#">
+								<img src="http://placehold.it/640x427" alt="" />
+								<span>
+									<h5>Bock et al. Nature (2011)</h5>
+									<span class="on-hover">
+										<p>J. Vogelstein, PHD</p>
+										<ul>
+											<li><strong>Modality:</strong> EM</li>
+											<li><strong>Species:</strong> M. musculus</li>
+											<li><strong>Cuboids:</strong> 77242464</li>
+											<li><strong>Cuboid Size:</strong> 262144</li>
+											<li><strong>Voxels:</strong> 20248.65</li>
+										</ul>
+									</span>
+								</span>
+							</a>
+						</div>
+						<div class="grid-25 shapes">
+							<a href="#">
+								<img src="http://placehold.it/640x427" alt="" />
+								<span>
+									<h5>Bock et al. Nature (2011)</h5>
+									<span class="on-hover">
+										<p>J. Vogelstein, PHD</p>
+										<ul>
+											<li><strong>Modality:</strong> EM</li>
+											<li><strong>Species:</strong> M. musculus</li>
+											<li><strong>Cuboids:</strong> 77242464</li>
+											<li><strong>Cuboid Size:</strong> 262144</li>
+											<li><strong>Voxels:</strong> 20248.65</li>
+										</ul>
+									</span>
+								</span>
+							</a>
+						</div>
+						<div class="grid-25 graphs">
+							<a href="#">
+								<img src="http://placehold.it/640x427" alt="" />
+								<span>
+									<h5>Bock et al. Nature (2011)</h5>
+									<span class="on-hover">
+										<p>J. Vogelstein, PHD</p>
+										<ul>
+											<li><strong>Modality:</strong> EM</li>
+											<li><strong>Species:</strong> M. musculus</li>
+											<li><strong>Cuboids:</strong> 77242464</li>
+											<li><strong>Cuboid Size:</strong> 262144</li>
+											<li><strong>Voxels:</strong> 20248.65</li>
+										</ul>
+									</span>
+								</span>
+							</a>
+						</div>
+						<div class="grid-25 graphs">
+							<a href="#">
+								<img src="http://placehold.it/640x427" alt="" />
+								<span>
+									<h5>Bock et al. Nature (2011)</h5>
+									<span class="on-hover">
+										<p>J. Vogelstein, PHD</p>
+										<ul>
+											<li><strong>Modality:</strong> EM</li>
+											<li><strong>Species:</strong> M. musculus</li>
+											<li><strong>Cuboids:</strong> 77242464</li>
+											<li><strong>Cuboid Size:</strong> 262144</li>
+											<li><strong>Voxels:</strong> 20248.65</li>
+										</ul>
+									</span>
+								</span>
+							</a>
+						</div>
+						<div class="grid-25 shapes">
+							<a href="#">
+								<img src="http://placehold.it/640x427" alt="" />
+								<span>
+									<h5>Bock et al. Nature (2011)</h5>
+									<span class="on-hover">
+										<p>J. Vogelstein, PHD</p>
+										<ul>
+											<li><strong>Modality:</strong> EM</li>
+											<li><strong>Species:</strong> M. musculus</li>
+											<li><strong>Cuboids:</strong> 77242464</li>
+											<li><strong>Cuboid Size:</strong> 262144</li>
+											<li><strong>Voxels:</strong> 20248.65</li>
+										</ul>
+									</span>
+								</span>
+							</a>
+						</div>
+						<div class="grid-25 matrices">
+							<a href="#">
+								<img src="http://placehold.it/640x427" alt="" />
+								<span>
+									<h5>Bock et al. Nature (2011)</h5>
+									<span class="on-hover">
+										<p>J. Vogelstein, PHD</p>
+										<ul>
+											<li><strong>Modality:</strong> EM</li>
+											<li><strong>Species:</strong> M. musculus</li>
+											<li><strong>Cuboids:</strong> 77242464</li>
+											<li><strong>Cuboid Size:</strong> 262144</li>
+											<li><strong>Voxels:</strong> 20248.65</li>
+										</ul>
+									</span>
+								</span>
+							</a>
+						</div>
+						<div class="grid-25 time">
+							<a href="#">
+								<img src="http://placehold.it/640x427" alt="" />
+								<span>
+									<h5>Bock et al. Nature (2011)</h5>
+									<span class="on-hover">
+										<p>J. Vogelstein, PHD</p>
+										<ul>
+											<li><strong>Modality:</strong> EM</li>
+											<li><strong>Species:</strong> M. musculus</li>
+											<li><strong>Cuboids:</strong> 77242464</li>
+											<li><strong>Cuboid Size:</strong> 262144</li>
+											<li><strong>Voxels:</strong> 20248.65</li>
+										</ul>
+									</span>
+								</span>
+							</a>
+						</div>
+					</div><!-- /.group -->
+				</div><!-- /.wrap -->
+
+				<div class="callout">
+					<div class="wrap">
+						<p>Explore the above information on the cloud, or feel free to <a href="#">download the project in it’s entirety</a> and work locally.</p>
+					</div>
+				</div><!-- /.callout -->
+
+				<div class="wrap group">
+					<div class="like-filter" data-rel="analyses">
+						<span>Analyses</span>
+					</div>
+				</div><!-- /.wrap.group -->
+
+				<div class="hovercheck wrap">
+					<div class="group">
+						<div class="grid-25">
+							<a href="#">
+								<img src="http://placehold.it/640x427" alt="" />
+								<span>
+									<h5>Bock et al. Nature (2011)</h5>
+									<span class="on-hover">
+										<p>J. Vogelstein, PHD</p>
+										<ul>
+											<li><strong>Modality:</strong> EM</li>
+											<li><strong>Species:</strong> M. musculus</li>
+											<li><strong>Cuboids:</strong> 77242464</li>
+											<li><strong>Cuboid Size:</strong> 262144</li>
+											<li><strong>Voxels:</strong> 20248.65</li>
+										</ul>
+									</span>
+								</span>
+							</a>
+						</div>
+						<div class="grid-25">
+							<a href="#">
+								<img src="http://placehold.it/640x427" alt="" />
+								<span>
+									<h5>Bock et al. Nature (2011)</h5>
+									<span class="on-hover">
+										<p>J. Vogelstein, PHD</p>
+										<ul>
+											<li><strong>Modality:</strong> EM</li>
+											<li><strong>Species:</strong> M. musculus</li>
+											<li><strong>Cuboids:</strong> 77242464</li>
+											<li><strong>Cuboid Size:</strong> 262144</li>
+											<li><strong>Voxels:</strong> 20248.65</li>
+										</ul>
+									</span>
+								</span>
+							</a>
+						</div>
+					</div><!-- /.group -->
+				</div><!-- /.wrap -->
+
+				<div class="wrap group">
+					<div class="like-filter" data-rel="tools">
+						<span>Tools</span>
+					</div>
+				</div><!-- /.wrap.group -->
+
+				<div class="hovercheck wrap">
+					<div class="group">
+						<div class="grid-25">
+							<a href="#">
+								<img src="http://placehold.it/640x427" alt="" />
+								<span>
+									<h5>Bock et al. Nature (2011)</h5>
+									<span class="on-hover">
+										<p>J. Vogelstein, PHD</p>
+										<ul>
+											<li><strong>Modality:</strong> EM</li>
+											<li><strong>Species:</strong> M. musculus</li>
+											<li><strong>Cuboids:</strong> 77242464</li>
+											<li><strong>Cuboid Size:</strong> 262144</li>
+											<li><strong>Voxels:</strong> 20248.65</li>
+										</ul>
+									</span>
+								</span>
+							</a>
+						</div>
+						<div class="grid-25">
+							<a href="#">
+								<img src="http://placehold.it/640x427" alt="" />
+								<span>
+									<h5>Bock et al. Nature (2011)</h5>
+									<span class="on-hover">
+										<p>J. Vogelstein, PHD</p>
+										<ul>
+											<li><strong>Modality:</strong> EM</li>
+											<li><strong>Species:</strong> M. musculus</li>
+											<li><strong>Cuboids:</strong> 77242464</li>
+											<li><strong>Cuboid Size:</strong> 262144</li>
+											<li><strong>Voxels:</strong> 20248.65</li>
+										</ul>
+									</span>
+								</span>
+							</a>
+						</div>
+						<div class="grid-25">
+							<a href="#">
+								<img src="http://placehold.it/640x427" alt="" />
+								<span>
+									<h5>Bock et al. Nature (2011)</h5>
+									<span class="on-hover">
+										<p>J. Vogelstein, PHD</p>
+										<ul>
+											<li><strong>Modality:</strong> EM</li>
+											<li><strong>Species:</strong> M. musculus</li>
+											<li><strong>Cuboids:</strong> 77242464</li>
+											<li><strong>Cuboid Size:</strong> 262144</li>
+											<li><strong>Voxels:</strong> 20248.65</li>
+										</ul>
+									</span>
+								</span>
+							</a>
+						</div>
+						<div class="grid-25">
+							<a href="#">
+								<img src="http://placehold.it/640x427" alt="" />
+								<span>
+									<h5>Bock et al. Nature (2011)</h5>
+									<span class="on-hover">
+										<p>J. Vogelstein, PHD</p>
+										<ul>
+											<li><strong>Modality:</strong> EM</li>
+											<li><strong>Species:</strong> M. musculus</li>
+											<li><strong>Cuboids:</strong> 77242464</li>
+											<li><strong>Cuboid Size:</strong> 262144</li>
+											<li><strong>Voxels:</strong> 20248.65</li>
+										</ul>
+									</span>
+								</span>
+							</a>
+						</div>
+					</div><!-- /.group -->
+				</div><!-- /.wrap -->
+
+			</div><!-- /#data -->
+
+		</div><!-- /#main -->
+
+		<div id="inner-bottom" data-rel="upload">
+			<div class="wrap group dark">
+				<div class="grid-6">
+					<h2>Contribute to this Project</h2>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+					<div>
+						<a href="#" class="button">Images</a>
+						<a href="#" class="button">Shapes</a>
+						<a href="#" class="button">Time</a>
+						<a href="#" class="button">Matrices</a>
+						<a href="#" class="button">Graphs</a>
+						<a href="#" class="button">Analyses</a>
+					</div>
+				</div>
+			</div><!-- /.wrap.group -->
+		</div><!-- /#inner-bottom -->
+
+	</div><!-- /#detail.page.inner -->
+
+{% include 'inc/footer.html' %}

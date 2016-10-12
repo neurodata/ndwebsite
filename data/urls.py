@@ -19,6 +19,7 @@ from django.contrib import admin
 from . import views
 
 urlpatterns = [
-  url(r'^', views.datahome, name='datahome'), 
+  url(r'^(?P<token>[\w]+)/?$', views.dataPage, name='datapage'),
   url(r'^admin/', admin.site.urls),
+  url(r'^', views.dataHome, name='datahome'),
 ]
