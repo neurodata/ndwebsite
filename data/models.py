@@ -10,6 +10,9 @@ class DataProject(models.Model):
     desc = models.TextField(blank=True)
     license = models.TextField(blank=True)
 
+    created = models.DateTimeField(auto_now_add=True) # update automatically on creation
+    updated = models.DateTimeField(auto_now=True) # update automatically on save
+
 class ExploreTile(models.Model):
     title = models.CharField(max_length=255, blank=True)
     author = models.CharField(max_length=255, blank=True)
