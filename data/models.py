@@ -4,7 +4,7 @@ from django.db import models
 
 # Create your models here.
 class DataProject(models.Model):
-    token = models.CharField(max_length=255)
+    token = models.CharField(max_length=255, primary_key=True)
 
     title = models.CharField(max_length=255, blank=True)
     desc = models.TextField(blank=True)
@@ -24,7 +24,7 @@ class ExploreTile(models.Model):
     cuboid_size = models.CharField(max_length=255, blank=True)
     voxels = models.CharField(max_length=255, blank=True)
 
-    dataproject = models.ForeignKey('DataProject')
+    dataproject = models.ForeignKey('DataProject', null=True)
 
     image = models.ImageField(upload_to='upload/tile/explore/')
 
