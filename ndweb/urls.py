@@ -1,4 +1,4 @@
-"""ndweb URL Configuration
+"""data URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/1.10/topics/http/urls/
@@ -17,8 +17,10 @@ from django.conf.urls import url
 from django.contrib import admin
 
 from . import views
+from data.views import datahome
 
 urlpatterns = [
-  url(r'^', views.home, name='home'), 
+  url(r'^data/?$', datahome),
   url(r'^admin/', admin.site.urls),
+  url(r'^$', views.home, name='home'),
 ]
