@@ -2,62 +2,62 @@
 
 {% include 'inc/header.html' %}
 
-	<div id="detail" class="page inner team">	
-	
+	<div id="detail" class="page inner team">
+
 		{% include 'inc/nav.html' %}
-		
+
 		<div id="banner" role="banner" class="dark">
 			<img id="video" src="{% static '/assets/img/team_fpo.jpg' %}" />
 			<img id="fader" src="{% static '/assets/img/vid-spacer-fade.png' %}" />
 			<div class="wrap group valign">
 				<h1>Meet Our Team</h1>
 			</div>
-			<img id="spacer" src="/assets/img/vid-spacer.png" />
+			<img id="spacer" src="{% static '/assets/img/vid-spacer.png' %}" />
 		</div>
-		
+
 		<!-- <img class="wedge" src="/assets/img/wedge-down.svg" /> -->
 		<div class="wedge-wrap"></div>
-		
+
 		<div id="main" role="main" class="overlay">
-		
-			<!--
+
 			<div class="wrap group">
 				<div id="filter" class="lockable filtering">
 					<span>Filter By:</span>
 					<div>
 						<a href="#" class="selected menu">All<i class="fa fa-bars"></i></a>
 						<a href="#" class="moby">All</a>
-						<a href="#">Explore</a>
-						<a href="#">Analyze</a>
-						<a href="#">Model</a>
-						<a href="#">Store</a>
+						{% for role in role_list %}
+						<a href="#">{{ role.title }}</a>
+						{% endfor %}
 					</div>
 				</div>
 			</div>
-			-->
-		
+
 			<div id="data" class="feature">
 				<div class="hovercheck wrap">
 					<div class="group">
 					{% for person in people_list %}
-						<div class="grid-25"> <!-- div class="grid-25 +data['filter'].toLowerCase()+'" -->
-
+						<div class ="grid-25{% for role in person.roles.all %} {{ role.title.lower }}{% endfor %}">
 							<img src="{% static '/assets/img/team/placeholder.png' %}" alt="{{ person.name }}" />
 							<span>
 								<span class="valign">
 									<h5>{{ person.name }}</h5>
-									<span class="on-hover"s>
-										<!-- <h6>data['position']</h6> -->
-										<!-- <p>'+data['filter']+'</p> -->
+									<span class="on-hover">
+										{% if person.position %}
+											<h6>{{ person.position }}</h6>
+										{% endif %}
+										{% if person.roles %}
+											<p>{% for role in person.roles.all %}{{ role.title }} {% endfor %}</p>
+										{% endif %}
 										<ul>
 										{% if person.github %}
-										<li><a href="https://github.com/{{ person.github }}" target="_blank"><i class="fa fa-github-alt"></i></a></li>
+											<li><a href="https://github.com/{{ person.github }}" target="_blank"><i class="fa fa-github-alt"></i></a></li>
 										{% endif %}
 
 										{% if person.email %}
-										<li><a href="mailto:{{ person.email }}"><i class="fa fa-envelope"></i></a></li>
+											<li><a href="mailto:{{ person.email }}"><i class="fa fa-envelope"></i></a></li>
 										{% endif %}
-										
+
 										{% if person.web %}
 											<li><a href="{{ person.web }}" target="_blank"><i class="fa fa-globe"></i></a></li>
 										{% endif %}
@@ -71,28 +71,11 @@
 							</span>
 						</div>
 					{% endfor %}
-<!-- 
-						<div class="grid-25 explore">
-							<img src="http://placehold.it/640x427" alt="" />
-							<span>
-									<h5>Alex Baden<br />
-									<span>Viz Guru</span></h5>
-									<span class="on-hover">
-										<p>Explore</p>
-										<ul>
-											<li><a href="#" target="_blank"><i class="fa fa-github-alt"></i></a></li>
-											<li><a href="mailto:name@domain.com"><i class="fa fa-envelope"></i></a></li>
-											<li><a href="#" target="_blank"><i class="fa fa-globe"></i></a></li>
-										</ul>
-									</span>
-							</span>
-						</div>
- -->
 					</div>
 				</div>
 			</div>
 		</div>
-		
-	</div>	
-	
+
+	</div>
+
 {% include 'inc/footer.html' %}

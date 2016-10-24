@@ -1,10 +1,17 @@
 from django.contrib import admin
 
 from .models import People
+from .models import Role
 
 # Register your models here.
 class PeopleAdmin(admin.ModelAdmin):
-    fields = ('name', 'github', 'twitter', 'web', 'email')
-    list_display = ('name', 'github', 'twitter', 'web', 'email')
+    fields = ('name', 'github', 'twitter', 'web', 'email', 'position', 'roles')
+    list_display = ('name', 'github', 'twitter', 'web', 'email', 'position')
+    filter_horizontal = ('roles',)
+
+class RoleAdmin(admin.ModelAdmin):
+    fields = ('title',)
+    list_display = ('title',)
 
 admin.site.register(People, PeopleAdmin)
+admin.site.register(Role, RoleAdmin)
