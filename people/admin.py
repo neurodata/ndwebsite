@@ -5,8 +5,8 @@ from .models import Role
 
 # Register your models here.
 class PeopleAdmin(admin.ModelAdmin):
-    fields = ('name', 'github', 'twitter', 'web', 'email', 'position', 'roles')
-    list_display = ('name', 'github', 'twitter', 'web', 'email', 'position')
+    fields = ('name', 'github', 'twitter', 'web', 'email', 'position', 'image_src', 'roles')
+    list_display = ('name', 'github', 'twitter', 'web', 'email', 'position', 'image_src')
     filter_horizontal = ('roles',)
 
 class RoleAdmin(admin.ModelAdmin):

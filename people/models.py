@@ -28,5 +28,7 @@ class People(models.Model):
     position = models.CharField(max_length=32, blank=True)
     roles = models.ManyToManyField(Role)
 
+    image_src = models.CharField(max_length=128, default="/assets/img/team/placeholder.png")
+
     created = models.DateTimeField(auto_now_add=True) # update automatically on creation
     updated = models.DateTimeField(auto_now=True) # update automatically on save
