@@ -20,6 +20,5 @@ from . import views
 
 urlpatterns = [
   url(r'^(?P<token>[\w]+)/$', views.toolPage, name='toolPage'),
-  url(r'^admin/', admin.site.urls),
   url(r'^', views.toolsHome, name='toolsHome'),
 ]
