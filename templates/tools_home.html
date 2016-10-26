@@ -1,0 +1,48 @@
+{% load staticfiles %}
+
+{% include 'inc/header.html' %}
+
+	<div id="ongoing-data" class="page">
+
+		{% include 'inc/nav.html' %}
+
+		<header id="header" role="banner">
+			<div class="wrap group dark">
+				<h1>Our <br />Tools</h1>
+				<p>Our goal is to work together with neuroexperimentalists to discover fundamental principles governing the relationship between mind and brain, via building and deploying open source data-driven tools that run at scale</p>
+				<div id="filter" class="lockable filtering">
+					<span class="light">Filter Tools By:</span>
+					<div>
+						<a href="#" class="selected menu">All<i class="fa fa-bars"></i></a>
+						<a href="#" class="moby">All</a>
+						{% for tool_type in tool_types %}
+						<a href="#">{{ tool_type.name }}</a>
+						{% endfor %}
+					</div>
+				</div>
+			</div>
+		</header>
+
+		<div id="main" role="main" class="overlay">
+			<div id="data" class="feature dark">
+
+				<div class="hovercheck wrap">
+					<div class="group">
+					{% for tool in tools %}
+						<div class="grid-25{% for type in tool.types.all %} {{ type.name.lower }}{% endfor %}">
+							<a href="{% url 'toolPage' tool.token %}">
+								<img src="{% static '/assets/img/team/placeholder.png' %}" alt="" />
+								<span>
+									<h5>{{ tool.longname }}</h5>
+								</span>
+							</a>
+						</div>
+					{% endfor %}
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+{% include 'inc/footer.html' %}

@@ -1,0 +1,41 @@
+{% load staticfiles %}
+
+{% include 'inc/header.html' %}
+
+	<div id="all-tools" class="page inner">
+
+		{% include 'inc/nav.html' %}
+
+		<div id="banner" role="banner" class="dark">
+			<img id="video" src="{% static '/assets/img/team_fpo.jpg' %}" />
+			<img id="fader" src="{% static '/assets/img/vid-spacer-fade.png' %}" />
+			<div class="wrap group valign">
+				<h1>{{ tool.short_description }}</h1>
+			</div>
+			<img id="spacer" src="{% static '/assets/img/vid-spacer.png' %}" />
+		</div>
+
+		<!-- <img class="wedge" src="/assets/img/wedge-down.svg" /> -->
+		<div class="wedge-wrap"></div>
+
+		<div id="main" role="main" class="overlay">
+			<div id="intro" class="wrap group dark text">
+				<h2>A Matrix Computation Engine</h2>
+				<div>
+					<ul id="anchors" class="dotless">
+						<li><a href="#" target="_blank"><i class="fa fa-gear"></i><span><span>API</span></span></a></li>
+						<li><a href="#" target="_blank"><i class="fa fa-code"></i><span><span>Code</span></span></a></li>
+						<li><a href="#" target="_blank"><i class="fa fa-file-text-o"></i><span><span>Documentation</span></span></a></li>
+						<li><a href="#" target="_blank"><i class="fa fa-book"></i><span><span>References</span></span></a></li>
+						<li><a href="#" target="_blank"><i class="fa fa-newspaper-o"></i><span><span>Press</span></span></a></li>
+						<li><a href="#" target="_blank"><i class="fa fa-user"></i><span><span>Contributor</span></span></a></li>
+					</ul>
+					{% if tool.long_description %}{{ tool.long_description|safe }}{% endif %}
+				</div>
+			</div>
+
+		</div>
+
+	</div>
+
+{% include 'inc/footer.html' %}

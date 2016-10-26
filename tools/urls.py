@@ -1,4 +1,4 @@
-"""data URL Configuration
+"""ndweb URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/1.10/topics/http/urls/
@@ -13,18 +13,13 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.conf.urls import include, url
+from django.conf.urls import url
 from django.contrib import admin
 
 from . import views
-from data.views import dataHome
-from people.views import peopleHome
-from tools.views import toolsHome, toolPage
 
 urlpatterns = [
-  url(r'^data/', include('data.urls')),
-  url(r'^people/', include('people.urls')),
-  url(r'^tools/', include('tools.urls')),
+  url(r'^(?P<token>[\w]+)/$', views.toolPage, name='toolPage'),
   url(r'^admin/', admin.site.urls),
-  url(r'^$', views.home, name='home'),
+  url(r'^', views.toolsHome, name='toolsHome'),
 ]
