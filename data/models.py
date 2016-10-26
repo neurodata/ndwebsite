@@ -3,6 +3,15 @@ from __future__ import unicode_literals
 from django.db import models
 
 # Create your models here.
+class DataType(models.Model):
+    class Meta:
+        ordering = ('name',)
+
+    def __str__(self):
+        return self.name
+
+    name = models.CharField(max_length=32, blank=False)
+
 class DataProject(models.Model):
     token = models.CharField(max_length=255, primary_key=True)
 
@@ -14,6 +23,8 @@ class DataProject(models.Model):
 
     created = models.DateTimeField(auto_now_add=True) # update automatically on creation
     updated = models.DateTimeField(auto_now=True) # update automatically on save
+
+    types = models.ManyToManyField(DataType)
 
 class ExploreTile(models.Model):
     title = models.CharField(max_length=255, blank=True)

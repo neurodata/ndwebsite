@@ -20,4 +20,3 @@ def dataPage(request, token):
         'background_image': dataproject.background_image,
     }
     return render(request, 'data_page.html', context)
-    #return HttpResponse(dataproject.title)
