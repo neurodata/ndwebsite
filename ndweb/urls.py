@@ -27,4 +27,5 @@ urlpatterns = [
   url(r'^tools/', include('tools.urls')),
   url(r'^admin/', admin.site.urls),
   url(r'^$', views.home, name='home'),
+  url(r'^ui-kit.html$', views.uikit),
 ]

@@ -1,0 +1,255 @@
+{% load staticfiles %}
+
+
+{% include 'inc/header.html' %}
+
+	<div id="ui-kit" class="page">
+
+		{% include 'inc/nav.html' %}
+		<div id="main">
+
+			<div id="colors" class="wrap">
+				<p class="tan">Tan: #dfd6c2</p>
+				<p class="slate">Slate: #a6bcd7</p>
+				<p class="dark-gray">Dark Gray: #28282e</p>
+				<p class="light-gray">Light Gray: #4a484c</p>
+				<p class="sky-blue">Sky Blue: #318dde</p>
+			</div>
+
+			<div class="wrap group fonts">
+				<div class="grid-3">
+					<h1>Heading 1</h1>
+					<p class="caps">81 px Quadon Medium All Caps</p>
+
+					<h2>Heading 2</h2>
+					<p class="caps">40 px Quadon Regular All Caps</p>
+
+					<h3>Heading 3</h3>
+					<p class="caps">29 px Quadon Medium All Caps</p>
+
+					<h4>Heading 4</h4>
+					<p class="caps">22 px Gentona Bold All Caps</p>
+
+					<h5>Heading 5</h5>
+					<p class="caps">16 px Gentona Bold All Caps 15 px Padding Black Bg</p>
+
+					<h6>Heading 6</h6>
+					<p>18 px Gentona Bold Sentence Case</p>
+
+					<p>Body copy</p>
+					<p>18 px Gentona Book Sentence Case</p>
+
+					<a class="button">Learn More</a>
+					<a class="button hollow">View All</a>
+
+				</div>
+				<div class="grid-3 dark">
+					<h1>Heading 1</h1>
+					<p class="caps">81 px Quadon Medium All Caps</p>
+
+					<h2>Heading 2</h2>
+					<p class="caps">40 px Quadon Regular All Caps</p>
+
+					<h3>Heading 3</h3>
+					<p class="caps">29 px Quadon Medium All Caps</p>
+
+					<h4>Heading 4</h4>
+					<p class="caps">22 px Gentona Bold All Caps</p>
+
+					<h5>Heading 5</h5>
+					<p class="caps">16 px Gentona Bold All Caps 15 px Padding Black Bg</p>
+
+					<h6>Heading 6</h6>
+					<p>18 px Gentona Bold Sentence Case</p>
+
+					<p>Body copy</p>
+					<p>18 px Gentona Book Sentence Case</p>
+
+					<a class="button">Learn More</a>
+					<a class="button hollow">View All</a>
+				</div>
+			</diV>
+
+			<div class="wrap group">
+				<div id="filter" class="filtering">
+					<span>Explore:</span>
+					<div>
+						<a href="#" class="selected menu">All<i class="fa fa-bars"></i></a>
+						<a href="#" class="moby">All</a>
+						<a href="#">Images</a>
+						<a href="#">Time</a>
+						<a href="#">Matrices</a>
+						<a href="#">Shapes</a>
+						<a href="#">Graphs</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="callout">
+				<div class="wrap">
+					<p>Explore the above information on the cloud, or feel free to <a href="#">download the project in it’s entirety</a> and work locally.</p>
+				</div>
+			</div>
+
+			<div class="wrap group">
+				<hr />
+			</div>
+			<div class="dark">
+				<div class="wrap group">
+					<hr />
+				</div>
+			</div>
+
+			<div class="wrap text">
+				<h3>Lorem Ipsum Dolor Sit Amet</h3>
+				<p>Accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis quae ab illo inventore veritatis. Aperiam, eaque ipsa quae ab illo inventore veritatis quae. Accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis quae ab illo inventore veritatis.</p>
+				<ul>
+					<li>Aperiam, eaque ipsa quae ab illo inventore veritatis quae.</li>
+					<li>Aperiam, eaque ipsa quae ab illo inventore veritatis quae.
+						<ul>
+							<li>Aperiam, eaque ipsa quae ab illo inventore veritatis quae.</li>
+						</ul>
+					</li>
+				</ul>
+				<ol>
+					<li>Aperiam, eaque ipsa quae ab illo inventore veritatis quae.</li>
+					<li>Aperiam, eaque ipsa quae ab illo inventore veritatis quae.</li>
+				</ol>
+			</div>
+			<div class="fifty-fifty dark">
+				<div class="wrap group">
+					<div class="grid-3 text">
+						<h3>Lorem Ipsum Dolor Sit Amet</h3>
+						<p>Accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis quae ab illo inventore veritatis. Aperiam, eaque ipsa quae ab illo inventore veritatis quae. Accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis quae ab illo inventore veritatis.</p>
+					</div>
+					<div class="grid-3 text">
+						<h3>Lorem Ipsum Dolor Sit Amet</h3>
+						<p>Accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis quae ab illo inventore veritatis. Aperiam, eaque ipsa quae ab illo inventore veritatis quae. Accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis quae ab illo inventore veritatis.</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="wrap group">
+
+				<form id="ui-form" action="#" mehod="post">
+					<div class="group">
+						<div class="half">
+							<label>First Name<input type="text" name="fistName" required /></label>
+						</div>
+						<div class="half">
+							<label>Last Name<input type="text" name="lastName" required /></label>
+						</div>
+					</div>
+					<label>Email<input type="email" name="emailAddress" required /></label>
+					<label>Street Address<input type="email" name="street" required /></label>
+					<div class="group">
+						<div class="half csz">
+							<label>City<input type="text" name="city" required /></label>
+							<label>State<input type="text" name="state" required /></label>
+							<label>Zip<input type="text" name="zip" required /></label>
+						</div>
+						<div class="half tel">
+							<label>Phone<input type="text" name="phone" /></label>
+						</div>
+					</div>
+
+					<div class="radio-group">
+						<p>Question with radio buttons?</p>
+						<label><input type="radio" name="radio" value="1" checked /> Sure! Why not?</label>
+						<label><input type="radio" name="radio" value="0" /> No Thanks!</label>
+					</div>
+
+					<div class="check-group">
+						<p>Question with checkboxes?</p>
+						<label><input type="checkbox" name="check" /> Sure! Why not?</label>
+						<label><input type="checkbox" name="check" /> No Thanks!</label>
+						<label><input type="checkbox" name="check" /> I wish there were more!</label>
+						<label><input type="checkbox" name="check" /> Only on Tuesdays</label>
+						<label><input type="checkbox" name="check" /> Of course</label>
+					</div>
+
+					<label>Please tell us more about checkboxes<textarea name="comments"></textarea></label>
+
+					<input class="validate" type="submit" value="Submit" />
+
+				</form>
+
+			</div>
+
+			<div id="data" class="feature dark">
+				<h2 class="wrap">Featured Data</h2>
+
+				<div class="hovercheck wrap">
+					<div class="group">
+						<div class="grid-25">
+							<a href="/detail.php?d=dataname">
+								<img src="http://placehold.it/640x427" alt="" />
+								<span>
+									<h5>KKI</h5>
+								</span>
+							</a>
+						</div>
+						<div class="grid-25">
+							<a href="/detail.php?d=dataname">
+								<img src="http://placehold.it/640x427" alt="" />
+								<span>
+									<h5>Ohyama et al. nature (2015)</h5>
+								</span>
+							</a>
+						</div>
+						<div class="grid-25">
+							<a href="/detail.php?d=dataname">
+								<img src="http://placehold.it/640x427" alt="" />
+								<span>
+									<h5>Acardona_abd1_5</h5>
+								</span>
+							</a>
+						</div>
+						<div class="grid-25">
+							<a href="/detail.php?d=dataname">
+								<img src="http://placehold.it/640x427" alt="" />
+								<span>
+									<h5>ara_test</h5>
+								</span>
+							</a>
+						</div>
+						<div class="grid-25">
+							<a href="/detail.php?d=dataname">
+								<img src="http://placehold.it/640x427" alt="" />
+								<span>
+									<h5>Bock et al. Nature (2011)</h5>
+								</span>
+							</a>
+						</div>
+						<div class="grid-25">
+							<a href="/detail.php?d=dataname">
+								<img src="http://placehold.it/640x427" alt="" />
+								<span>
+									<h5>Weiler et al. Scientific Data (2014)</h5>
+								</span>
+							</a>
+						</div>
+						<div class="grid-25">
+							<a href="/detail.php?d=dataname">
+								<img src="http://placehold.it/640x427" alt="" />
+								<span>
+									<h5>Vladimirov et al. Nature Methods (2014)</h5>
+								</span>
+							</a>
+						</div>
+						<div class="grid-25 view-all">
+							<a href="/data.php">
+								<img src="http://placehold.it/640x427" alt="" />
+								<span>
+									<h5>View all Data &gt;</h5>
+								</span>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+{% include 'inc/footer.html' %}
