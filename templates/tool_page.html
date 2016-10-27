@@ -20,7 +20,7 @@
 
 		<div id="main" role="main" class="overlay">
 			<div id="intro" class="wrap group dark text">
-				<h2>{{ tool.short_description }}</h2>
+				<h2>{{ tool.short_description|safe }}</h2>
 				<div>
 					<ul id="anchors" class="dotless">
 						{% if tool.api_url %}
