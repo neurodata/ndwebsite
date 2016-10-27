@@ -31,7 +31,7 @@
 					{% for tool in tools %}
 						<div class="grid-25{% for type in tool.types.all %} {{ type.name.lower }}{% endfor %}">
 							<a href="{% url 'toolPage' tool.token %}">
-								<img src="{% static tool.list_image_src %}" alt="{{ tool.longname }}" />
+								<img src="{% static tool.list_image_src %}" alt="{{ tool.longname }}" width="640" height="247" />
 								<span>
 									<h5>{{ tool.longname }}</h5>
 								</span>
