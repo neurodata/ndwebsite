@@ -101,7 +101,8 @@
 					<div class="group">
 
 						{% for tile in tiles %}
-						{% if tile.types == 'analyses' %}
+						{% for type in tile.types.all %}
+						{% if type.name == 'analyses' %}
 						<div class="grid-25">
 							<a href="{{ tile.url }}">
 								<img src="{% static tile.image %}" alt="{{ tile.title }}" />
@@ -115,6 +116,7 @@
 							</a>
 						</div>
 						{% endif %}
+						{% endfor %}
 						{% endfor %}
 
 					</div><!-- /.group -->
@@ -130,7 +132,8 @@
 					<div class="group">
 
 						{% for tile in tiles %}
-						{% if tile.types == 'tools' %}
+						{% for type in tile.types.all %}
+						{% if type.name == 'tools' %}
 						<div class="grid-25">
 							<a href="{{ tile.url }}">
 								<img src="{% static tile.image %}" alt="{{ tile.title }}" />
@@ -144,6 +147,7 @@
 							</a>
 						</div>
 						{% endif %}
+						{% endfor %}
 						{% endfor %}
 
 					</div><!-- /.group -->
@@ -159,7 +163,8 @@
 					<div class="group">
 
 						{% for tile in tiles %}
-						{% if tile.types == 'publications' %}
+						{% for type in tile.types.all %}
+						{% if type.name == 'publications' %}
 						<div class="grid-25">
 							<a href="{{ tile.url }}">
 								<img src="{% static tile.image %}" alt="{{ tile.title }}" />
@@ -173,6 +178,7 @@
 							</a>
 						</div>
 						{% endif %}
+						{% endfor %}
 						{% endfor %}
 
 					</div><!-- /.group -->
