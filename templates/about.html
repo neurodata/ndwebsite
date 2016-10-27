@@ -1,0 +1,74 @@
+{% load staticfiles %}
+{% include 'inc/header.html' %}
+
+	<div id="about" class="page inner">
+
+		{% include 'inc/nav.html' %}
+
+		<div id="banner" role="banner" class="dark">
+			<img id="video" src="{% static '/assets/img/about_fpo.jpg' %}" />
+			<img id="fader" src="{% static '/assets/img/vid-spacer-fade.png' %}" />
+			<div class="wrap group valign">
+				<h1>About Neurodata</h1>
+			</div>
+			<img id="spacer" src="{% static '/assets/img/vid-spacer.png' %}" />
+		</div><!-- /#banner -->
+
+		<div class="wedge-wrap"></div>
+
+		<div id="main" role="main" class="overlay">
+			<div id="intro" class="wrap group dark text">
+				<h2>Mission Statement</h2>
+
+				<p>Our goal is to work together with neuroexperimentalists to discover fundamental principles governing the relationship between mind and brain, via building and deploying open source data-driven tools that run at scale on open access data. This includes analytics, databases, cloud computing, and Web-services applied to both big neuroimages and big neurographs.</p>
+				<p>We believe in the upward spiral of science, that is, that the scientific community is in a continual process of learning from past, building models on previous experiments, which lead to new experiments, etc. Therefore, we practice reproducible research and open science. Our interests span the spatiotemporal scales of analysis, ranging from nanoscale (serial electron microscopy) to microscale (e.g., array tomography, CLARITY, and calcium imaging) to macroscale (e.g., SPECT and multimodal magnetic resonance imaging). We aim to please, so please provide us with feedback!</p>
+				<p><strong>References: <a target="_blank" href="https://www.mendeley.com/groups/1680241/neurodata-publications/papers/">Neurodata Mendeley Group</a></strong></p>
+
+				<hr />
+
+				<h3 class="press">Press</h3>
+
+				<p class="press"><strong><a target="_blank" href="http://www.genengnews.com/best-of-the-web/open-connectome-project/2963/">Best of the Web: Open Connectome Project</a></strong></p>
+				<p class="press"><strong><a target="_blank" href="http://www.neuralsystemsandcircuits.com/content/1/1/16">Neural Systems and Circuits interview</a></strong></p>
+				<p class="press"><strong><a target="_blank" href="">Cogito: Connecting Young Thinkers Around the World interview</a></strong></p>
+				<p class="press"><strong><a target="_blank" href="https://theconnectome.wordpress.com/2012/02/05/podcast-1-our-interview-with-joshua-vogelstein/">The Connectome blog interview</a></strong></p>
+				<p class="press"><strong><a target="_blank" href="http://www.jhuapl.edu/newscenter/stories/st111017.asp">Mapping the Mind to Build Smarter Machines</a></strong></p>
+			</div><!-- /#intro.wrap.group -->
+		</div><!-- /#main -->
+
+		<div id="inner-bottom">
+			<div class="wrap group">
+				<h2>Funding</h2>
+				<div class="logo">
+					<a href="http://www.nsf.gov" target="_blank"><img src="{% static '/assets/img/nsf_fpo.png' %}" /></a>
+					<div class="logo-detail">
+						<h6>NSF</h6>
+						<p>A Scientific Planning Workshop for Coordinating Brain Research Around the Globe</p>
+						<p><strong>Start Date:</strong> 04/01/16</p>
+						<p><strong>End Date:</strong> 03/31/17</p>
+					</div>
+				</div>
+				<div class="logo">
+					<a href="https://www.jhu.edu" target="_blank"><img src="{% static '/assets/img/johns_hopkins_fpo.png' %}" /></a>
+					<div class="logo-detail">
+						<h6>Johns Hopkins</h6>
+						<p>A Scientific Planning Workshop for Coordinating Brain Research Around the Globe</p>
+						<p><strong>Start Date:</strong> 04/01/16</p>
+						<p><strong>End Date:</strong> 03/31/17</p>
+					</div>
+				</div>
+				<div class="logo">
+					<a href="http://www.darpa.mil" target="_blank"><img src="{% static '/assets/img/darpa_fpo.png' %}" /></a>
+					<div class="logo-detail">
+						<h6>DARPA</h6>
+						<p>A Scientific Planning Workshop for Coordinating Brain Research Around the Globe</p>
+						<p><strong>Start Date:</strong> 04/01/16</p>
+						<p><strong>End Date:</strong> 03/31/17</p>
+					</div>
+				</div>
+			</div><!-- /.wrap.group -->
+		</div><!-- /#inner-bottom -->
+
+	</div><!-- /#about.page.inner -->
+
+{% include 'inc/footer.html' %}
