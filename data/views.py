@@ -19,15 +19,9 @@ def dataPage(request, token):
     dataproject = get_object_or_404(DataProject, token=token)
 
     exploretiletypes = ExploreTileType.objects.all()
-    try:
-        exploretiles = ExploreTile.objects.get(dataproject = dataproject)
-    except ExploreTile.DoesNotExist:
-        exploretiles = None
+    exploretiles = ExploreTile.objects.filter(dataproject = dataproject).prefetch_related('types')
 
-    try:
-        tiles = Tile.objects.get(dataproject = dataproject)
-    except Tile.DoesNotExist:
-        tiles = None
+    tiles = Tile.objects.filter(dataproject = dataproject).prefetch_related('types')
 
     context = {
         'data' : dataproject,
