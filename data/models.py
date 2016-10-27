@@ -55,7 +55,7 @@ class ExploreTile(models.Model):
     types = models.ManyToManyField(ExploreTileType)
 
     def __unicode__(self):
-        return self.name
+        return self.title
 
 class TileType(models.Model):
     class Meta:
