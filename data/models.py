@@ -26,6 +26,15 @@ class DataProject(models.Model):
 
     types = models.ManyToManyField(DataType)
 
+class ExploreTileType(models.Model):
+    class Meta:
+        ordering = ('name',)
+
+    def __str__(self):
+        return self.name
+
+    name = models.CharField(max_length=32, blank=False)
+
 class ExploreTile(models.Model):
     title = models.CharField(max_length=255, blank=True)
     author = models.CharField(max_length=255, blank=True)
@@ -37,13 +46,30 @@ class ExploreTile(models.Model):
 
     dataproject = models.ForeignKey('DataProject', null=True)
 
-    image = models.ImageField(upload_to='upload/tile/explore/')
+    image = models.CharField(max_length=128, default="/assets/img/tools/placeholder.png")
 
-    SUBCATEGORY_CHOICES = (
-        ('Images', 'Images'),
-        ('Time', 'Time'),
-        ('Matrices', 'Matrices'),
-        ('Shapes', 'Shapes'),
-        ('Graphs', 'Graphs')
-    )
-    subcategory = models.CharField(max_length=255, choices=SUBCATEGORY_CHOICES)
+    types = models.ManyToManyField(ExploreTileType)
+
+    def __unicode__(self):
+        return self.name
+
+class TileType(models.Model):
+    class Meta:
+        ordering = ('name',)
+
+    def __str__(self):
+        return self.name
+
+    name = models.CharField(max_length=32, blank=False)
+
+class Tile(models.Model):
+    title = models.CharField(max_length=255, blank=True)
+    subtitle = models.CharField(max_length=255, blank=True)
+
+    desc = models.TextField(blank=True)
+
+    dataproject = models.ForeignKey('DataProject', null=True)
+
+    image = models.CharField(max_length=128, default="/assets/img/tools/placeholder.png")
+
+    types = models.ManyToManyField(TileType)
