@@ -29,17 +29,17 @@
 						{% if tool.code_url %}
 						<li><a href="{{ tool.code_url }}" target="_blank"><i class="fa fa-code"></i><span><span>Code</span></span></a></li>
 						{% endif %}
-						{% if tool.doc_url %}
-						<li><a href="{{ tool.doc_url }}" target="_blank"><i class="fa fa-file-text-o"></i><span><span>Documentation</span></span></a></li>
+						{% if tool.docs_url %}
+						<li><a href="{{ tool.docs_url }}" target="_blank"><i class="fa fa-file-text-o"></i><span><span>Documentation</span></span></a></li>
 						{% endif %}
-						{% if tool.ref_url %}
-						<li><a href="{{ tool.ref_url }}" target="_blank"><i class="fa fa-book"></i><span><span>References</span></span></a></li>
+						{% if tool.issues_url %}
+						<li><a href="{{ tool.issues_url }}" target="_blank"><i class="fa fa-question-circle"></i><span><span>Issues</span></span></a></li>
 						{% endif %}
 						{% if tool.press_url %}
 						<li><a href="{{ tool.press_url }}" target="_blank"><i class="fa fa-newspaper-o"></i><span><span>Press</span></span></a></li>
 						{% endif %}
 						{% if tool.contributers_url %}
-						<li><a href="{{ tool.contributers_url }}" target="_blank"><i class="fa fa-user"></i><span><span>Contribute</span></span></a></li>
+						<li><a href="{{ tool.contributers_url }}" target="_blank"><i class="fa fa-user"></i><span><span>Contributers</span></span></a></li>
 						{% endif %}
 					</ul>
 					{% if tool.long_description %}{{ tool.long_description|safe }}{% endif %}
