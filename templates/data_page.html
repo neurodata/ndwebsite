@@ -50,150 +50,38 @@
 
 				<div class="hovercheck wrap">
 					<div class="group">
-						<div class="grid-25 time">
-							<a href="#">
-								<img src="http://placehold.it/640x427" alt="" />
+
+						{% for explore_tile in explore_tiles %}
+						<div class="grid-25 {% for type in explore_tile.types.all %}{{ type.name|lower }}{% endfor %}">
+							<a href="{{ explore_tile.url }}">
+								<img src="{% static explore_tile.image %}" alt="{{ explore_tile.title }}" />
 								<span>
-									<h5>Bock et al. Nature (2011)</h5>
+									<h5>{{ explore_tile.title }}</h5>
 									<span class="on-hover">
-										<p>J. Vogelstein, PHD</p>
+										<p>{{ explore_tile.author }}</p>
 										<ul>
-											<li><strong>Modality:</strong> EM</li>
-											<li><strong>Species:</strong> M. musculus</li>
-											<li><strong>Cuboids:</strong> 77242464</li>
-											<li><strong>Cuboid Size:</strong> 262144</li>
-											<li><strong>Voxels:</strong> 20248.65</li>
+											{% if explore_tile.modality %}
+											<li><strong>Modality:</strong> {{ explore_tile.modality }}</li>
+											{% endif %}
+											{% if explore_tile.species %}
+											<li><strong>Species:</strong> {{ explore_tile.species }}</li>
+											{% endif %}
+											{% if explore_tile.cuboids %}
+											<li><strong>Cuboids:</strong> {{ explore_tile.cuboids }}</li>
+											{% endif %}
+											{% if explore_tile.cuboid_size %}
+											<li><strong>Cuboid Size:</strong> {{ explore_tile.cuboid_size }}</li>
+											{% endif %}
+											{% if explore_tile.voxels %}
+											<li><strong>Voxels:</strong> {{ explore_tile.voxels }}</li>
+											{% endif %}
 										</ul>
 									</span>
 								</span>
 							</a>
 						</div>
-						<div class="grid-25 matrices">
-							<a href="#">
-								<img src="http://placehold.it/640x427" alt="" />
-								<span>
-									<h5>Bock et al. Nature (2011)</h5>
-									<span class="on-hover">
-										<p>J. Vogelstein, PHD</p>
-										<ul>
-											<li><strong>Modality:</strong> EM</li>
-											<li><strong>Species:</strong> M. musculus</li>
-											<li><strong>Cuboids:</strong> 77242464</li>
-											<li><strong>Cuboid Size:</strong> 262144</li>
-											<li><strong>Voxels:</strong> 20248.65</li>
-										</ul>
-									</span>
-								</span>
-							</a>
-						</div>
-						<div class="grid-25 shapes">
-							<a href="#">
-								<img src="http://placehold.it/640x427" alt="" />
-								<span>
-									<h5>Bock et al. Nature (2011)</h5>
-									<span class="on-hover">
-										<p>J. Vogelstein, PHD</p>
-										<ul>
-											<li><strong>Modality:</strong> EM</li>
-											<li><strong>Species:</strong> M. musculus</li>
-											<li><strong>Cuboids:</strong> 77242464</li>
-											<li><strong>Cuboid Size:</strong> 262144</li>
-											<li><strong>Voxels:</strong> 20248.65</li>
-										</ul>
-									</span>
-								</span>
-							</a>
-						</div>
-						<div class="grid-25 graphs">
-							<a href="#">
-								<img src="http://placehold.it/640x427" alt="" />
-								<span>
-									<h5>Bock et al. Nature (2011)</h5>
-									<span class="on-hover">
-										<p>J. Vogelstein, PHD</p>
-										<ul>
-											<li><strong>Modality:</strong> EM</li>
-											<li><strong>Species:</strong> M. musculus</li>
-											<li><strong>Cuboids:</strong> 77242464</li>
-											<li><strong>Cuboid Size:</strong> 262144</li>
-											<li><strong>Voxels:</strong> 20248.65</li>
-										</ul>
-									</span>
-								</span>
-							</a>
-						</div>
-						<div class="grid-25 graphs">
-							<a href="#">
-								<img src="http://placehold.it/640x427" alt="" />
-								<span>
-									<h5>Bock et al. Nature (2011)</h5>
-									<span class="on-hover">
-										<p>J. Vogelstein, PHD</p>
-										<ul>
-											<li><strong>Modality:</strong> EM</li>
-											<li><strong>Species:</strong> M. musculus</li>
-											<li><strong>Cuboids:</strong> 77242464</li>
-											<li><strong>Cuboid Size:</strong> 262144</li>
-											<li><strong>Voxels:</strong> 20248.65</li>
-										</ul>
-									</span>
-								</span>
-							</a>
-						</div>
-						<div class="grid-25 shapes">
-							<a href="#">
-								<img src="http://placehold.it/640x427" alt="" />
-								<span>
-									<h5>Bock et al. Nature (2011)</h5>
-									<span class="on-hover">
-										<p>J. Vogelstein, PHD</p>
-										<ul>
-											<li><strong>Modality:</strong> EM</li>
-											<li><strong>Species:</strong> M. musculus</li>
-											<li><strong>Cuboids:</strong> 77242464</li>
-											<li><strong>Cuboid Size:</strong> 262144</li>
-											<li><strong>Voxels:</strong> 20248.65</li>
-										</ul>
-									</span>
-								</span>
-							</a>
-						</div>
-						<div class="grid-25 matrices">
-							<a href="#">
-								<img src="http://placehold.it/640x427" alt="" />
-								<span>
-									<h5>Bock et al. Nature (2011)</h5>
-									<span class="on-hover">
-										<p>J. Vogelstein, PHD</p>
-										<ul>
-											<li><strong>Modality:</strong> EM</li>
-											<li><strong>Species:</strong> M. musculus</li>
-											<li><strong>Cuboids:</strong> 77242464</li>
-											<li><strong>Cuboid Size:</strong> 262144</li>
-											<li><strong>Voxels:</strong> 20248.65</li>
-										</ul>
-									</span>
-								</span>
-							</a>
-						</div>
-						<div class="grid-25 time">
-							<a href="#">
-								<img src="http://placehold.it/640x427" alt="" />
-								<span>
-									<h5>Bock et al. Nature (2011)</h5>
-									<span class="on-hover">
-										<p>J. Vogelstein, PHD</p>
-										<ul>
-											<li><strong>Modality:</strong> EM</li>
-											<li><strong>Species:</strong> M. musculus</li>
-											<li><strong>Cuboids:</strong> 77242464</li>
-											<li><strong>Cuboid Size:</strong> 262144</li>
-											<li><strong>Voxels:</strong> 20248.65</li>
-										</ul>
-									</span>
-								</span>
-							</a>
-						</div>
+						{% endfor %}
+
 					</div><!-- /.group -->
 				</div><!-- /.wrap -->
 
@@ -211,42 +99,24 @@
 
 				<div class="hovercheck wrap">
 					<div class="group">
+
+						{% for tile in tiles %}
+						{% if tile.types == 'analyses' %}
 						<div class="grid-25">
-							<a href="#">
-								<img src="http://placehold.it/640x427" alt="" />
+							<a href="{{ tile.url }}">
+								<img src="{% static tile.image %}" alt="{{ tile.title }}" />
 								<span>
-									<h5>Bock et al. Nature (2011)</h5>
+									<h5>{{ tile.title }}</h5>
 									<span class="on-hover">
-										<p>J. Vogelstein, PHD</p>
-										<ul>
-											<li><strong>Modality:</strong> EM</li>
-											<li><strong>Species:</strong> M. musculus</li>
-											<li><strong>Cuboids:</strong> 77242464</li>
-											<li><strong>Cuboid Size:</strong> 262144</li>
-											<li><strong>Voxels:</strong> 20248.65</li>
-										</ul>
+										<p>{{ tile.subtitle }}</p>
+										{{ tile.desc|safe }}
 									</span>
 								</span>
 							</a>
 						</div>
-						<div class="grid-25">
-							<a href="#">
-								<img src="http://placehold.it/640x427" alt="" />
-								<span>
-									<h5>Bock et al. Nature (2011)</h5>
-									<span class="on-hover">
-										<p>J. Vogelstein, PHD</p>
-										<ul>
-											<li><strong>Modality:</strong> EM</li>
-											<li><strong>Species:</strong> M. musculus</li>
-											<li><strong>Cuboids:</strong> 77242464</li>
-											<li><strong>Cuboid Size:</strong> 262144</li>
-											<li><strong>Voxels:</strong> 20248.65</li>
-										</ul>
-									</span>
-								</span>
-							</a>
-						</div>
+						{% endif %}
+						{% endfor %}
+
 					</div><!-- /.group -->
 				</div><!-- /.wrap -->
 
@@ -258,78 +128,24 @@
 
 				<div class="hovercheck wrap">
 					<div class="group">
+
+						{% for tile in tiles %}
+						{% if tile.types == 'tools' %}
 						<div class="grid-25">
-							<a href="#">
-								<img src="http://placehold.it/640x427" alt="" />
+							<a href="{{ tile.url }}">
+								<img src="{% static tile.image %}" alt="{{ tile.title }}" />
 								<span>
-									<h5>Bock et al. Nature (2011)</h5>
+									<h5>{{ tile.title }}</h5>
 									<span class="on-hover">
-										<p>J. Vogelstein, PHD</p>
-										<ul>
-											<li><strong>Modality:</strong> EM</li>
-											<li><strong>Species:</strong> M. musculus</li>
-											<li><strong>Cuboids:</strong> 77242464</li>
-											<li><strong>Cuboid Size:</strong> 262144</li>
-											<li><strong>Voxels:</strong> 20248.65</li>
-										</ul>
+										<p>{{ tile.subtitle }}</p>
+										{{ tile.desc|safe }}
 									</span>
 								</span>
 							</a>
 						</div>
-						<div class="grid-25">
-							<a href="#">
-								<img src="http://placehold.it/640x427" alt="" />
-								<span>
-									<h5>Bock et al. Nature (2011)</h5>
-									<span class="on-hover">
-										<p>J. Vogelstein, PHD</p>
-										<ul>
-											<li><strong>Modality:</strong> EM</li>
-											<li><strong>Species:</strong> M. musculus</li>
-											<li><strong>Cuboids:</strong> 77242464</li>
-											<li><strong>Cuboid Size:</strong> 262144</li>
-											<li><strong>Voxels:</strong> 20248.65</li>
-										</ul>
-									</span>
-								</span>
-							</a>
-						</div>
-						<div class="grid-25">
-							<a href="#">
-								<img src="http://placehold.it/640x427" alt="" />
-								<span>
-									<h5>Bock et al. Nature (2011)</h5>
-									<span class="on-hover">
-										<p>J. Vogelstein, PHD</p>
-										<ul>
-											<li><strong>Modality:</strong> EM</li>
-											<li><strong>Species:</strong> M. musculus</li>
-											<li><strong>Cuboids:</strong> 77242464</li>
-											<li><strong>Cuboid Size:</strong> 262144</li>
-											<li><strong>Voxels:</strong> 20248.65</li>
-										</ul>
-									</span>
-								</span>
-							</a>
-						</div>
-						<div class="grid-25">
-							<a href="#">
-								<img src="http://placehold.it/640x427" alt="" />
-								<span>
-									<h5>Bock et al. Nature (2011)</h5>
-									<span class="on-hover">
-										<p>J. Vogelstein, PHD</p>
-										<ul>
-											<li><strong>Modality:</strong> EM</li>
-											<li><strong>Species:</strong> M. musculus</li>
-											<li><strong>Cuboids:</strong> 77242464</li>
-											<li><strong>Cuboid Size:</strong> 262144</li>
-											<li><strong>Voxels:</strong> 20248.65</li>
-										</ul>
-									</span>
-								</span>
-							</a>
-						</div>
+						{% endif %}
+						{% endfor %}
+
 					</div><!-- /.group -->
 				</div><!-- /.wrap -->
 
@@ -341,78 +157,24 @@
 
 				<div class="hovercheck wrap">
 					<div class="group">
+
+						{% for tile in tiles %}
+						{% if tile.types == 'publications' %}
 						<div class="grid-25">
-							<a href="#">
-								<img src="http://placehold.it/640x427" alt="" />
+							<a href="{{ tile.url }}">
+								<img src="{% static tile.image %}" alt="{{ tile.title }}" />
 								<span>
-									<h5>Bock et al. Nature (2011)</h5>
+									<h5>{{ tile.title }}</h5>
 									<span class="on-hover">
-										<p>J. Vogelstein, PHD</p>
-										<ul>
-											<li><strong>Modality:</strong> EM</li>
-											<li><strong>Species:</strong> M. musculus</li>
-											<li><strong>Cuboids:</strong> 77242464</li>
-											<li><strong>Cuboid Size:</strong> 262144</li>
-											<li><strong>Voxels:</strong> 20248.65</li>
-										</ul>
+										<p>{{ tile.subtitle }}</p>
+										{{ tile.desc|safe }}
 									</span>
 								</span>
 							</a>
 						</div>
-						<div class="grid-25">
-							<a href="#">
-								<img src="http://placehold.it/640x427" alt="" />
-								<span>
-									<h5>Bock et al. Nature (2011)</h5>
-									<span class="on-hover">
-										<p>J. Vogelstein, PHD</p>
-										<ul>
-											<li><strong>Modality:</strong> EM</li>
-											<li><strong>Species:</strong> M. musculus</li>
-											<li><strong>Cuboids:</strong> 77242464</li>
-											<li><strong>Cuboid Size:</strong> 262144</li>
-											<li><strong>Voxels:</strong> 20248.65</li>
-										</ul>
-									</span>
-								</span>
-							</a>
-						</div>
-						<div class="grid-25">
-							<a href="#">
-								<img src="http://placehold.it/640x427" alt="" />
-								<span>
-									<h5>Bock et al. Nature (2011)</h5>
-									<span class="on-hover">
-										<p>J. Vogelstein, PHD</p>
-										<ul>
-											<li><strong>Modality:</strong> EM</li>
-											<li><strong>Species:</strong> M. musculus</li>
-											<li><strong>Cuboids:</strong> 77242464</li>
-											<li><strong>Cuboid Size:</strong> 262144</li>
-											<li><strong>Voxels:</strong> 20248.65</li>
-										</ul>
-									</span>
-								</span>
-							</a>
-						</div>
-						<div class="grid-25">
-							<a href="#">
-								<img src="http://placehold.it/640x427" alt="" />
-								<span>
-									<h5>Bock et al. Nature (2011)</h5>
-									<span class="on-hover">
-										<p>J. Vogelstein, PHD</p>
-										<ul>
-											<li><strong>Modality:</strong> EM</li>
-											<li><strong>Species:</strong> M. musculus</li>
-											<li><strong>Cuboids:</strong> 77242464</li>
-											<li><strong>Cuboid Size:</strong> 262144</li>
-											<li><strong>Voxels:</strong> 20248.65</li>
-										</ul>
-									</span>
-								</span>
-							</a>
-						</div>
+						{% endif %}
+						{% endfor %}
+
 					</div><!-- /.group -->
 				</div><!-- /.wrap -->
 

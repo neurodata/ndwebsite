@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import DataProject, DataType, ExploreTile, ExploreTileType, Tile
+from .models import DataProject, DataType, ExploreTile, ExploreTileType, Tile, TileType
 
 # Register your models here.
 class ExploreTileInline(admin.StackedInline):
@@ -12,6 +12,10 @@ class TileInline(admin.StackedInline):
     model = Tile
     extra = 0
     filter_horizontal = ('types',)
+
+class TileTypeAdmin(admin.ModelAdmin):
+    fields = ('name',)
+    list_display = ('name',)
 
 class DataProjectAdmin(admin.ModelAdmin):
     fields = ('token', 'title', 'list_image_src', 'background_image', 'desc', 'license', 'types')
@@ -32,3 +36,4 @@ class ExploreTileTypeAdmin(admin.ModelAdmin):
 admin.site.register(DataProject, DataProjectAdmin)
 admin.site.register(DataType, DataTypeAdmin)
 admin.site.register(ExploreTileType, ExploreTileTypeAdmin)
+admin.site.register(TileType, TileTypeAdmin)

@@ -48,6 +48,8 @@ class ExploreTile(models.Model):
 
     dataproject = models.ForeignKey('DataProject', null=True)
 
+    url = models.CharField(max_length=255, blank=True)
+
     image = models.CharField(max_length=128, default="/assets/img/tools/placeholder.png")
 
     types = models.ManyToManyField(ExploreTileType)
@@ -67,6 +69,8 @@ class TileType(models.Model):
 class Tile(models.Model):
     title = models.CharField(max_length=255, blank=True)
     subtitle = models.CharField(max_length=255, blank=True)
+
+    url = models.CharField(max_length=255, blank=True)
 
     desc = models.TextField(blank=True)
 
