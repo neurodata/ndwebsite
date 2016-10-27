@@ -20,12 +20,13 @@ class Tool(models.Model):
 
     list_image_src = models.CharField(max_length=128, default="/assets/img/tools/placeholder.png")
     header_image_src = models.CharField(max_length=128, default="/assets/img/tools/default_header.jpg")
-    api_text = models.TextField(blank=True)
-    code_text = models.TextField(blank=True)
-    doc_text = models.TextField(blank=True)
-    ref_text = models.TextField(blank=True)
-    press_text = models.TextField(blank=True)
-    contributing_text = models.TextField(blank=True)
+
+    api_url = models.URLField(max_length=255, blank=True)
+    code_url = models.URLField(max_length=255, blank=True)
+    issues_url = models.URLField(max_length=255, blank=True)
+    docs_url = models.URLField(max_length=255, blank=True)
+    press_url = models.URLField(max_length=255, blank=True)
+    contributers_url = models.URLField(max_length=255, blank=True)
 
     created = models.DateTimeField(auto_now_add=True) # update automatically on creation
     updated = models.DateTimeField(auto_now=True) # update automatically on save
