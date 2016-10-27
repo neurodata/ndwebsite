@@ -19,6 +19,6 @@ from django.contrib import admin
 from . import views
 
 urlpatterns = [
-  url(r'^(?P<token>[\w]+)/?$', views.dataPage, name='datapage'),
-  url(r'^', views.dataHome, name='datahome'),
+  url(r'^(?P<token>[\w]+)/?$', views.dataPage, name='dataPage'),
+  url(r'^', views.dataHome, name='dataHome'),
 ]

@@ -19,7 +19,9 @@ class DataProject(models.Model):
     desc = models.TextField(blank=True)
     license = models.TextField(blank=True)
 
+    list_image_src = models.CharField(max_length=128, default="/assets/img/tools/placeholder.png")
     background_image = models.CharField(max_length=128, default='assets/img/tools/default_header.jpg')
+
 
     created = models.DateTimeField(auto_now_add=True) # update automatically on creation
     updated = models.DateTimeField(auto_now=True) # update automatically on save

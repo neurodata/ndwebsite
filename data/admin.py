@@ -14,7 +14,7 @@ class TileInline(admin.StackedInline):
     filter_horizontal = ('types',)
 
 class DataProjectAdmin(admin.ModelAdmin):
-    fields = ('token', 'title', 'background_image', 'desc', 'license', 'types')
+    fields = ('token', 'title', 'list_image_src', 'background_image', 'desc', 'license', 'types')
     list_display = ('title', 'token', 'created', 'updated')
 
     filter_horizontal = ('types',)
