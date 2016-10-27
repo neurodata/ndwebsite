@@ -4,8 +4,8 @@ from .models import Tool, ToolType
 
 class ToolAdmin(admin.ModelAdmin):
     fields = ('token', 'longname', 'short_description', 'long_description',
-        'list_image_src', 'header_image_src', 'api_text', 'code_text',
-        'doc_text', 'ref_text', 'press_text', 'contributing_text',
+        'list_image_src', 'header_image_src', 'api_url', 'code_url',
+        'docs_url', 'press_url', 'issues_url', 'contributers_url',
         'types')
     list_display = ('token', 'longname')
     filter_horizontal = ('types',)

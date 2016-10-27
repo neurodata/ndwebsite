@@ -23,88 +23,28 @@
 				<h2>{{ tool.short_description }}</h2>
 				<div>
 					<ul id="anchors" class="dotless">
-						{% if tool.api_text %}
-						<li><a href="#" target="_blank"><i class="fa fa-gear"></i><span><span>API</span></span></a></li>
+						{% if tool.api_url %}
+						<li><a href="{{ tool.api_url }}" target="_blank"><i class="fa fa-gear"></i><span><span>API</span></span></a></li>
 						{% endif %}
-						{% if tool.code_text %}
-						<li><a href="#" target="_blank"><i class="fa fa-code"></i><span><span>Code</span></span></a></li>
+						{% if tool.code_url %}
+						<li><a href="{{ tool.code_url }}" target="_blank"><i class="fa fa-code"></i><span><span>Code</span></span></a></li>
 						{% endif %}
-						{% if tool.doc_text %}
-						<li><a href="#" target="_blank"><i class="fa fa-file-text-o"></i><span><span>Documentation</span></span></a></li>
+						{% if tool.docs_url %}
+						<li><a href="{{ tool.docs_url }}" target="_blank"><i class="fa fa-file-text-o"></i><span><span>Documentation</span></span></a></li>
 						{% endif %}
-						{% if tool.ref_text %}
-						<li><a href="#" target="_blank"><i class="fa fa-book"></i><span><span>References</span></span></a></li>
+						{% if tool.issues_url %}
+						<li><a href="{{ tool.issues_url }}" target="_blank"><i class="fa fa-question-circle"></i><span><span>Issues</span></span></a></li>
 						{% endif %}
-						{% if tool.press_text %}
-						<li><a href="#" target="_blank"><i class="fa fa-newspaper-o"></i><span><span>Press</span></span></a></li>
+						{% if tool.press_url %}
+						<li><a href="{{ tool.press_url }}" target="_blank"><i class="fa fa-newspaper-o"></i><span><span>Press</span></span></a></li>
 						{% endif %}
-						{% if tool.contributing_text %}
-						<li><a href="#" target="_blank"><i class="fa fa-user"></i><span><span>Contribute</span></span></a></li>
+						{% if tool.contributers_url %}
+						<li><a href="{{ tool.contributers_url }}" target="_blank"><i class="fa fa-user"></i><span><span>Contributers</span></span></a></li>
 						{% endif %}
 					</ul>
 					{% if tool.long_description %}{{ tool.long_description|safe }}{% endif %}
 				</div>
 			</div>
-			{% if tool.api_text %}
-			<div class="wrap group">
-				<div class="like-filter" data-rel="api">
-								<span>API</span>
-				</div>
-				<div class="wrap group dark text">
-					{{ tool.api_text|safe }}
-				</div>
-				{% endif %}
-			</div>
-			{% if tool.code_text %}
-			<div class="wrap group">
-				<div class="like-filter" data-rel="code">
-								<span>Code</span>
-				</div>
-				<div class="wrap group dark text">
-					{{ tool.code_text|safe }}
-				</div>
-			</div>
-			{% endif %}
-			{% if tool.doc_text %}
-			<div class="wrap group">
-				<div class="like-filter" data-rel="documentation">
-								<span>Documentation</span>
-				</div>
-				<div class="wrap group dark text">
-					{{ tool.doc_text|safe }}
-				</div>
-			</div>
-			{% endif %}
-			{% if tool.ref_text %}
-			<div class="wrap group">
-				<div class="like-filter" data-rel="references">
-								<span>References</span>
-				</div>
-				<div class="wrap group dark text">
-					{{ tool.ref_text|safe }}
-				</div>
-			</div>
-			{% endif %}
-			{% if tool.press_text %}
-			<div class="wrap group">
-				<div class="like-filter" data-rel="press">
-								<span>Press</span>
-				</div>
-				<div class="wrap group dark text">
-					{{ tool.press_text|safe }}
-				</div>
-			</div>
-			{% endif %}
-			{% if tool.contributing_text %}
-			<div class="wrap group">
-				<div class="like-filter" data-rel="contribute">
-								<span>Contribute</span>
-				</div>
-				<div class="wrap group dark text">
-					{{ tool.contributing_text|safe }}
-				</div>
-			</div>
-			{% endif %}
 		</div>
 	</div>
 
