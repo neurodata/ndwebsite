@@ -20,12 +20,12 @@ def dataPage(request, token):
 
     exploretiletypes = ExploreTileType.objects.all()
     try:
-        exploretiles = ExploreTile.objects.get(dataproject = dataproject).prefetch_related('types')
+        exploretiles = ExploreTile.objects.get(dataproject = dataproject)
     except ExploreTile.DoesNotExist:
         exploretiles = None
 
     try:
-        tiles = Tile.objects.get(dataproject = dataproject).prefetch_related('types')
+        tiles = Tile.objects.get(dataproject = dataproject)
     except Tile.DoesNotExist:
         tiles = None
 
