@@ -16,17 +16,21 @@ class DataProject(models.Model):
     token = models.CharField(max_length=255, primary_key=True)
 
     title = models.CharField(max_length=255, blank=True)
+    author = models.CharField(max_length=255, blank=True)
     desc = models.TextField(blank=True)
     license = models.TextField(blank=True)
 
     list_image_src = models.CharField(max_length=128, default="/assets/img/tools/placeholder.png")
-    background_image = models.CharField(max_length=128, default='assets/img/tools/default_header.jpg')
+    background_image = models.CharField(max_length=128, default='/assets/img/tools/default_header.jpg')
 
 
     created = models.DateTimeField(auto_now_add=True) # update automatically on creation
     updated = models.DateTimeField(auto_now=True) # update automatically on save
 
     types = models.ManyToManyField(DataType)
+
+    def __str__(self):
+        return self.token
 
 class ExploreTileType(models.Model):
     class Meta:
@@ -39,12 +43,14 @@ class ExploreTileType(models.Model):
 
 class ExploreTile(models.Model):
     title = models.CharField(max_length=255, blank=True)
-    author = models.CharField(max_length=255, blank=True)
+    subtitle = models.CharField(max_length=255, blank=True)
     modality = models.CharField(max_length=255, blank=True)
     species = models.CharField(max_length=255, blank=True)
-    cuboids = models.CharField(max_length=255, blank=True)
-    cuboid_size = models.CharField(max_length=255, blank=True)
+
     voxels = models.CharField(max_length=255, blank=True)
+    resolution = models.CharField(max_length=255, blank=True)
+
+    desc = models.CharField(max_length=511, blank=True)
 
     dataproject = models.ForeignKey('DataProject', null=True)
 
@@ -53,6 +59,9 @@ class ExploreTile(models.Model):
     image = models.CharField(max_length=128, default="/assets/img/tools/placeholder.png")
 
     types = models.ManyToManyField(ExploreTileType)
+
+    def __str__(self):
+        return self.title
 
     def __unicode__(self):
         return self.title
@@ -79,3 +88,6 @@ class Tile(models.Model):
     image = models.CharField(max_length=128, default="/assets/img/tools/placeholder.png")
 
     types = models.ManyToManyField(TileType)
+
+    def __str__(self):
+        return self.title

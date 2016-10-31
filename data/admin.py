@@ -18,8 +18,8 @@ class TileTypeAdmin(admin.ModelAdmin):
     list_display = ('name',)
 
 class DataProjectAdmin(admin.ModelAdmin):
-    fields = ('token', 'title', 'list_image_src', 'background_image', 'desc', 'license', 'types')
-    list_display = ('title', 'token', 'created', 'updated')
+    fields = ('token', 'title', 'author', 'list_image_src', 'background_image', 'desc', 'license', 'types')
+    list_display = ('title', 'author', 'token', 'created', 'updated')
 
     filter_horizontal = ('types',)
 
