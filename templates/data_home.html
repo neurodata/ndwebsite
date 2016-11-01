@@ -32,7 +32,7 @@
 						{% for data_project in data_projects %}
 						<div class="grid-25 {% for type in data_project.types.all %}{{ type.name.lower }}{% endfor %}">
 							<a href="{% url 'dataPage' data_project.token %}">
-								<img src="{% static data_project.list_image_src %}" alt="{{ data_project.title }}" />
+								<img src="{% static data_project.list_image_src %}" alt="{{ data_project.title }}" width="640" height="247" />
 								<span>
 									<h5>{{ data_project.title }}</h5>
 								</span>
@@ -47,4 +47,4 @@
 		</div>
 	</div>
 
-<?php include('inc/footer.php'); ?>
+{% include 'inc/footer.html' %}
