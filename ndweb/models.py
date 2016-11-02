@@ -7,6 +7,7 @@ from tools.models import Tool
 class FeaturedData(models.Model):
     class Meta:
         ordering = ('priority',)
+        verbose_name_plural = "Featured data"
 
     priority = models.IntegerField(default=0)
     dataProject = models.OneToOneField(DataProject, null=False)

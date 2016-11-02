@@ -12,6 +12,9 @@ class ToolType(models.Model):
     name = models.CharField(max_length=32, blank=False)
 
 class Tool(models.Model):
+    def __str__(self):
+        return self.token
+
     token = models.CharField(max_length=64, primary_key=True)
     longname = models.CharField(max_length=128)
 
