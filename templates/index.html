@@ -7,22 +7,6 @@
 	.group clears all floats
 -->
 
-	<script>
-		var featuredDataObj = {
-			"data":
-			[
-				{"id":"01","title":"KKI", "image":"data-01-01.jpg"},
-				{"id":"02","title":"Ohyama et al. nature (2015)", "image":"data-02-01.jpg"},
-				{"id":"03","title":"Acardona_abd1_5", "image":"data-03-01.jpg"},
-				{"id":"04","title":"ara_test", "image":"data-04-01.jpg"},
-				{"id":"05","title":"Bock et al. Nature (2011)", "image":"data-05-01.jpg"},
-				{"id":"06","title":"Weiler et al. Scientific Data (2014)", "image":"data-06-01.jpg"},
-				{"id":"07","title":"Vladimirov et al. Nature Methods (2014)", "image":"data-07-01.jpg"}
-			],
-		};
-		{% include 'inc/teamObj.js' %}
-	</script>
-
 	<div id="home" class="page">
 
 		{% include 'inc/nav.html' %}
@@ -73,17 +57,15 @@
 
 				<div class="hovercheck wrap">
 					<div class="group">
-					<script>
-						$.each(featuredDataObj.data, function(i, data) {
-							document.write('<div class="grid-25">');
-							document.write('<a href="/detail.php?id='+data['id']+'"></a>');
-							document.write('<div><img src="/data/'+data['image']+'" alt="" />');
-							document.write('<span><h5>'+data['title']+'</h5></span></div>');
-							document.write('</div>');
-						});
-					</script>
+						{% for data_project in data_projects %}
+						<div class="grid-25">
+							<a href="{% url 'dataPage' data_project.dataProject.token %}"></a>
+							<div><img src="{% static data_project.dataProject.list_image_src %}" alt="{{ data_project.dataProject.title }}" />
+							<span><h5>{{ data_project.dataProject.title }}</h5></span></div>
+							</div>
+							{% endfor %}
 						<div class="grid-25 view-all">
-							<a href="/data"></a>
+							<a href="{% url 'dataHome' %}"></a>
 							<div>
 								<img src="http://placehold.it/640x427" alt="" />
 								<span>
@@ -95,46 +77,42 @@
 				</div><!-- /.wrap -->
 			</div><!-- /#data -->
 
-			<div id="tools" class="feature dark">
+			<div id="data" class="feature dark">
+				<div class="mask"></div>
 				<h2 class="wrap">Featured Tools</h2>
-				<div class="wrap group">
-					<div class="grid-3">
-						<img src="http://placehold.it/640x427" alt="" />
-					</div>
-					<div class="grid-3">
-						<div class="valign">
-							<h4><a href="#" target="_blank">Really Long Tool Name That Goes on for a Long Time and Has to Go on to a Second Line</a></h4>
-							<h4><a href="#" target="_blank">Tool Name #3</a></h4>
-							<h4><a href="#" target="_blank">Really Long Tool Name That Goes on for a Long Time and Has to Go on to a Second Line</a></h4>
-							<a href="/tools.php" class="button">View all tools</a>
+
+				<div class="hovercheck wrap">
+					<div class="group">
+						{% for featuredTool in featuredTools %}
+						<div class="grid-25">
+							<a href="{% url 'toolPage' featuredTool.tool.token %}"></a>
+							<div><img src="{% static featuredTool.tool.list_image_src %}" alt="{{ featuredTool.tool.longname }}" />
+							<span><h5>{{ featuredTool.tool.shortname }}</h5></span></div>
+							</div>
+							{% endfor %}
+						<div class="grid-25 view-all">
+							<a href="{% url 'dataHome' %}"></a>
+							<div>
+								<img src="http://placehold.it/640x427" alt="" />
+								<span>
+									<h5>View all Data &gt;</h5>
+								</span>
+							</div>
 						</div>
-					</div>
-				</div><!-- /.wrap.group -->
+					</div><!-- /.group -->
+				</div><!-- /.wrap -->
 			</div><!-- /#tools -->
-
-			<script>
-				//this line of code removes the team members without pictures
-				teamObj.data = $.grep(teamObj.data, function(o,i) { return o.image == 'placeholder.png'; }, true);
-
-				//these two lines pick a random team member from the array of objects
-				var obj_keys = Object.keys(teamObj.data);
-				var ran_key = obj_keys[Math.floor(Math.random() *obj_keys.length)];
-			</script>
 
 			<div id="bottom" class="group dark">
 				<div class="grid-3 no-margin">
-					<script>
-						document.write('<span><img class="grey" src="/assets/img/team/'+teamObj.data[ran_key]['image']+'" alt="'+teamObj.data[ran_key]['name']+'" /></span>');
-					</script>
+					<span><img class="grey" src="{% static randomPerson.image_src %}" alt="{{ person.name }}" /></span>
 					<div class="copy">
 						<h3>Meet Our Team</h3>
-					<script>
-						document.write('<p><strong>'+teamObj.data[ran_key]['name']+'</strong><p>');
-						document.write('<p class="mbot"><em>'+teamObj.data[ran_key]['position']+'</em><p>');
-					</script>
-						<script>document.write('<p>'+teamObj.data[ran_key]['bio']+'<p>');</script>
-						<a href="/team.php" class="button">Learn more</a>
-						<a href="/team.php" class="button hollow">View all</a>
+						<p><strong>{{ randomPerson.name }}</strong></p>
+						<p class="mbot"><em>{{ randomPerson.position }}</em><p>
+						<!-- <p>'+teamObj.data[ran_key]['bio']+'<p -->
+						<!--a href="/people/" class="button">Learn more</a -->
+						<a href="/people/" class="button hollow">View all</a>
 					</div>
 				</div>
 				<div class="grid-3 no-margin">
