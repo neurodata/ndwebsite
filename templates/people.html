@@ -38,7 +38,7 @@
 					<div class="group">
 					{% for person in people_list %}
 						<div class ="grid-25{% for role in person.roles.all %} {{ role.title.lower }}{% endfor %}">
-							<img src="{% static person.image_src %}" alt="{{ person.name }}"  width="640" height="auto" />
+							<img src="{% static person.image_src %}" alt="{{ person.name }}"  />
 							<span>
 								<span class="valign">
 									<h5>{{ person.name }}</h5>
