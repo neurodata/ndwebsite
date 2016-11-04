@@ -37,7 +37,7 @@ RUN service mysql start && mysql -u root -i -e "create user 'neurodata'@'localho
   python manage.py migrate
 
 # colllect static files
-RUN python manage.py collectstatic
+RUN python manage.py collectstatic --no-input
 
 # configure nginx and supervisor
 RUN echo "daemon off;" >> /etc/nginx/nginx.conf
