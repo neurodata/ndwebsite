@@ -11,7 +11,7 @@ RUN apt-get -y install \
   git vim \
   supervisor
 
-RUN apt-get -y --fix-missing install nginx 
+RUN apt-get -y install nginx
 
 # install MySQL independently
 RUN DEBIAN_FRONTEND=noninteractive \
@@ -26,6 +26,7 @@ COPY . /var/www/ndwebsite/
 WORKDIR /var/www/ndwebsite
 
 # install django / python requirements
+RUN pip install --upgrade pip
 RUN pip install -r setup/requirements.txt
 RUN pip install uwsgi
 
