@@ -7,10 +7,11 @@ RUN apt-get -y upgrade
 # install dependencies
 RUN apt-get -y install \
   python-all-dev \
-  nginx \
   python-pip \
   git vim \
   supervisor
+
+RUN apt-get -y --fix-missing install nginx 
 
 # install MySQL independently
 RUN DEBIAN_FRONTEND=noninteractive \
