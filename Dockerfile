@@ -8,6 +8,7 @@ RUN apt-get -y upgrade
 RUN apt-get -y install \
   python-all-dev \
   python-pip \
+  uwsgi-plugin-python \
   git vim \
   supervisor
 
@@ -42,7 +43,7 @@ RUN python manage.py collectstatic --no-input
 # configure nginx and supervisor
 RUN echo "daemon off;" >> /etc/nginx/nginx.conf
 COPY setup/nginx-default.conf /etc/nginx/sites-available/default
-COPY setup/supervisor.conf /etc/supervisor/conf.d/
+COPY setup/supervisord.conf /etc/supervisor/conf.d/
 
 # Expose the port (note: if you change the port here, you need to change it in CMD below)
 EXPOSE 80
