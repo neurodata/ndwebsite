@@ -30,11 +30,10 @@ RUN pip install --upgrade pip
 RUN pip install -r setup/requirements.txt
 RUN pip install uwsgi
 
-ENV PASSWORD 'YOUR_PASSWORD_HERE'
 # create mysql users
-RUN service mysql start && mysql -u root -i -e "create user 'neurodata'@'localhost' identified by '$PASSWORD';" &&\
+RUN service mysql start && mysql -u root -i -e "create user 'neurodata'@'localhost' identified by 'YOUR_PASSWORD_HERE';" &&\
   mysql -u root -i -e "grant all privileges on *.* to 'neurodata'@'localhost' with grant option;" &&\
-  mysql -u neurodata -p$PASSWORD -i -e "CREATE DATABASE ndwebsite;" &&\
+  mysql -u neurodata -pYOUR_PASSWORD_HERE -i -e "CREATE DATABASE ndwebsite;" &&\
   python manage.py migrate
 
 # colllect static files
