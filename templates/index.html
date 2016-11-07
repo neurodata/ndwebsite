@@ -74,15 +74,8 @@
 							</div>
 						</div>
 					</div><!-- /.group -->
-				</div><!-- /.wrap -->
-			</div><!-- /#data -->
-
-			<div id="data" class="feature dark">
-				<div class="mask"></div>
-				<h2 class="wrap">Featured Tools</h2>
-
-				<div class="hovercheck wrap">
 					<div class="group">
+						<h2 class="wrap">Featured Tools</h2>
 						{% for featuredTool in featuredTools %}
 						<div class="grid-25">
 							<a href="{% url 'toolPage' featuredTool.tool.token %}"></a>
@@ -91,17 +84,18 @@
 							</div>
 							{% endfor %}
 						<div class="grid-25 view-all">
-							<a href="{% url 'dataHome' %}"></a>
+							<a href="{% url 'toolsHome' %}"></a>
 							<div>
 								<img src="http://placehold.it/640x427" alt="" />
 								<span>
-									<h5>View all Data &gt;</h5>
+									<h5>View all Tools &gt;</h5>
 								</span>
 							</div>
 						</div>
 					</div><!-- /.group -->
+
 				</div><!-- /.wrap -->
-			</div><!-- /#tools -->
+			</div><!-- /#data -->
 
 			<div id="bottom" class="group dark">
 				<div class="grid-3 no-margin">
