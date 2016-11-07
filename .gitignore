@@ -3,3 +3,6 @@ settings_secret.py
 *.pyc
 
 .DS_Store
+
+# django static dir
+/static/
