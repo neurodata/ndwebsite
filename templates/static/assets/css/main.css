@@ -562,6 +562,21 @@ footer.dark,
 
 #intro.dark { background-color: transparent; }
 #intro h2 { margin: 20px 0; }
+
+	#home.page { position: relative; }
+	#home #top-nav, #home #video { position: absolute; }
+
+	#alert { color: #fff; background-color: #7e7fa9; width: 100%; padding: 15px 0; text-align: center; position: relative; z-index: 20; }
+	#alert a { color: #fff; border-bottom: none; font-family: 'Gentona Bold', 'Arial Bold', sans-serif; }
+	#alert a:hover { color: #000; }
+
+	#alert li { display: inline; white-space: nowrap; }
+	#alert li { margin: 0 10px;}
+
+@media screen and (max-width: 520px) {
+	#alert li { margin: 0; font-size: 4.3vw; }
+}
+
 #home #intro p {
 	font-size: 20px;
 	max-width: 870px;
@@ -1550,4 +1565,11 @@ ___  __   __        __
 	form .csz label + label + label { text-align: right; }
 	form .csz input[name="zip"] { text-align: left; }
 
+}
+
+@media screen and (min-width: 1361px) {
+	#data .hovercheck div img {
+		width: 312px;
+		height: 208px;
+	}
 }
