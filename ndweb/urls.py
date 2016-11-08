@@ -15,6 +15,8 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
+from django.views.generic.base import RedirectView
+from django.core.urlresolvers import reverse_lazy
 
 from . import views
 from data.views import dataHome
@@ -29,4 +31,18 @@ urlpatterns = [
   url(r'^$', views.home, name='home'),
   url(r'^about/$', views.about, name='about'),
   url(r'^ui-kit.html$', views.uikit),
+
+  # URL redirection for projects on old neurodata site.
+  url(r'^array-tomography/?.*', RedirectView.as_view(url='/data/weiler14/', permanent=True)),
+  url(r'^kasthuri11/?.*', RedirectView.as_view(url='/data/kasthuri15/', permanent=True)),
+  url(r'^fly-medulla/?.*', RedirectView.as_view(url='/data/takemura13/', permanent=True)),
+  url(r'^bhatla15/?.*', RedirectView.as_view(url='/data/bhatla15/', permanent=True)),
+
+  # These exist on the old site and may not have a new home yet
+  url(r'^pristionchus-pacificus/?.*', RedirectView.as_view(url='/data/', permanent=False)),
+  url(r'^celegans//?.*', RedirectView.as_view(url='/data/', permanent=False)),
+  url(r'^neural-behavior-maps/?.*', RedirectView.as_view(url='/data/', permanent=False)),
+  url(r'^male-c-elegans/?.*', RedirectView.as_view(url='/data/', permanent=False)),
+
+
 ]
