@@ -202,6 +202,14 @@ $(document).ready(function() {
 
 	$(window).on('load', function() {
 	
+		if($(window).width() < 1361 && $(window).width() > 639) {
+			var elementHeights = $('#data .hovercheck div img').map(function() {
+				return $(this).height();
+			}).get();				
+			var maxHeight = Math.max.apply(null, elementHeights);
+			$('#data .hovercheck div img').height(maxHeight);
+		}
+	
 		if($('#filter').length > 0) {
 		
 			cat = $('#filter a.selected').text().toLowerCase();
@@ -221,12 +229,46 @@ $(document).ready(function() {
 					}
 				}
 			});
+			
 		}
 		
 	});
 	
 });
 
+$(window).resize(function(){
+
+	clearTimeout($.data(this, 'resizeTimer'));
+	
+	if($(window).width() > 1360){
+		$.data(this, 'resizeTimer', setTimeout(function() {
+			$('#data .hovercheck div img').css({
+				'width':'312px',
+				'height':'208px'
+			});
+		}, 200));
+	} else if($(window).width() < 640) {
+		$.data(this, 'resizeTimer', setTimeout(function() {
+			$('#data .hovercheck div img').css({
+				'width':'100%',
+				'height':'auto'
+			});
+		}, 200));
+	} else {
+		$.data(this, 'resizeTimer', setTimeout(function() {
+			$('#data .hovercheck div img').css({
+				'width':'100%',
+				'height':'auto'
+			});
+			var elementHeights = $('#data .hovercheck div img').map(function() {
+				return $(this).height();
+			}).get();				
+			var maxHeight = Math.max.apply(null, elementHeights);
+			$('#data .hovercheck div img').height(maxHeight);
+		}, 200));
+	}
+			
+});
 
 $(document).scroll(function(){
 
@@ -264,5 +306,17 @@ $(document).scroll(function(){
 			}
 		}
 	}
+	
+	if($('#alert').length > 0) {
+		var homepos = $('#home').offset();
+		
+		if(scroll >= homepos.top){
+			$('#home #top-nav, #home #video').css('position','fixed');
+		} else {
+			$('#home #top-nav, #home #video').css('position','absolute');
+		}
+	}
+	
+	
 		
 });
