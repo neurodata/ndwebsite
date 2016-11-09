@@ -37,10 +37,16 @@ urlpatterns = [
   url(r'^kasthuri11/?.*', RedirectView.as_view(url='/data/kasthuri15/', permanent=True)),
   url(r'^fly-medulla/?.*', RedirectView.as_view(url='/data/takemura13/', permanent=True)),
   url(r'^bhatla15/?.*', RedirectView.as_view(url='/data/bhatla15/', permanent=True)),
+  url(r'^pristionchus-pacificus/?.*', RedirectView.as_view(url='/data/bumbarger13/', permanent=False)),
+  url(r'^bock11/?.*', RedirectView.as_view(url='/data/bock11/', permanent=True)),
+
+  # These are the expected paths but they are not populated?
+  url(r'^hildebrand16/?.*', RedirectView.as_view(url='/data/hildebrand16/', permanent=True)),
+  url(r'^wanner16/?.*', RedirectView.as_view(url='/data/wanner16/', permanent=True)),
+  url(r'^lee16/?.*', RedirectView.as_view(url='/data/lee16/', permanent=True)),
 
   # These exist on the old site and may not have a new home yet
-  url(r'^pristionchus-pacificus/?.*', RedirectView.as_view(url='/data/', permanent=False)),
-  url(r'^celegans//?.*', RedirectView.as_view(url='/data/', permanent=False)),
+  url(r'^celegans/?.*', RedirectView.as_view(url='/data/', permanent=False)),
   url(r'^neural-behavior-maps/?.*', RedirectView.as_view(url='/data/', permanent=False)),
   url(r'^male-c-elegans/?.*', RedirectView.as_view(url='/data/', permanent=False)),
 
