@@ -1,6 +1,6 @@
 #!/bin/bash
 
-WEBSITE_IP=128.220.176.10
+WEBSITE_IP=128.220.176.7
 
 docker run -d \
 	--volumes-from ndwebmysqldir \
