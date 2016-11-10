@@ -47,9 +47,12 @@ COPY setup/supervisord.conf /etc/supervisor/conf.d/
 
 # Expose the port (note: if you change the port here, you need to change it in CMD below)
 EXPOSE 80
+EXPOSE 443
+
+# Create log directory for uWSGI
+RUN mkdir /var/log/uwsgi
 
 CMD ["supervisord", "-n"]
-
 
 # setup entrypoint
 #COPY setup/docker_entrypoint.sh /usr/local/bin/
