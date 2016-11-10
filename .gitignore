@@ -4,5 +4,7 @@ settings_secret.py
 
 .DS_Store
 
+Dockerfile
+
 # django static dir
 /static/
