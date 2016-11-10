@@ -43,7 +43,9 @@ urlpatterns = [
   # These are the expected paths but they are not populated?
   url(r'^hildebrand16/?.*', RedirectView.as_view(url='/data/hildebrand16/', permanent=True)),
   url(r'^wanner16/?.*', RedirectView.as_view(url='/data/wanner16/', permanent=True)),
-  url(r'^lee16/?.*', RedirectView.as_view(url='/data/lee16/', permanent=True)),
+  # lee16 is really tobin16
+  url(r'^lee16/?.*', RedirectView.as_view(url='/data/tobin16/', permanent=True)),
+  url(r'^tobin16/?.*', RedirectView.as_view(url='/data/tobin16/', permanent=True)),
 
   # These exist on the old site and may not have a new home yet
   url(r'^celegans/?.*', RedirectView.as_view(url='/data/', permanent=False)),
