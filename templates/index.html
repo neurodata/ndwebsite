@@ -9,10 +9,17 @@
 
 <div id="alert">
 	<ul class="wrap">
+		<li><i class="fa fa- fa-exclamation-triangle" aria-hidden="true"></i> <a onclick="showAlertFull()">NeuroData Systems Outage</a></li>
+		<!--
 		<li>See our live demo of <a href="http://scienceinthe.cloud">Science in the Cloud</a></li>
 		<li>Join us for our <a href="http://www.stat.ucla.edu/~akfletcher/brainsbits.html">Brains and Bits NIPS Workshop</a></li>
 		<li>See our <a href="http://docs.neurodata.io/ndintro">Intro Slides</a></li>
+		-->
 	</ul>
+	<div id="alert-read-more" style="display:none;">
+	<p>On January 25th, 2017, we suffered a catastrophic hard drive failure on one of our primary data servers. We are currently working to provision a new server and restore all our systems to normal operating conditions. In the meantime, some projects may be temporarily unavailable. We will post an update in this space when all systems are restored. Please feel free to contact us at <a href="mailto:support@neurodata.io">support@neurodata.io</a> with any questions in the meantime.</p>
+	<p><a onclick="hideAlertFull()">Hide</a></p>
+	</div>
 </div>
 
 	<div id="home" class="page">
