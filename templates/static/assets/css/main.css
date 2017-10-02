@@ -571,7 +571,7 @@ footer.dark,
 	#alert a:hover { color: #000; }
 
 	#alert li { display: inline; white-space: nowrap; }
-	#alert li { margin: 0 10px;}
+	#alert li { margin: 0 25px;}
 
 @media screen and (max-width: 520px) {
 	#alert li { margin: 0; font-size: 4.3vw; }
