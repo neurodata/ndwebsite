@@ -35,6 +35,16 @@
 	<link rel="stylesheet" href="{% static 'assets/css/grid.css' %}" type="text/css" media="all" />
 	<link rel="stylesheet" href="{% static 'assets/css/main.css' %}" type="text/css" media="all" />
 
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-69121088-1"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'UA-69121088-1');
+	</script>
+
 	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js?ver=3.1.1"></script>
   <!--[if lt IE 9 ]>
 	<script type="text/javascript" src="{% static 'assets/js/modernizr.3.3.1.min.js?ver=3.3.1' %}"></script>
